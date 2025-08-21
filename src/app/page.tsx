@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Page() {
   const levels = [
-    { id: 1, title: "Niveau 1", subtitle: "Fête Foraine" }
-    // Tu pourras ajouter {id:2,...} ici
+    { id: 1, title: "Niveau 1", subtitle: "Fête Foraine" },
+    { id: 2, title: "Niveau 2", subtitle: "Club de Lecture" }
   ];
 
   return (

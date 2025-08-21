@@ -408,6 +408,11 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+
+  .line-through {
+    -webkit-text-decoration-line: line-through;
+    text-decoration-line: line-through;
+  }
 }
 
 :root {

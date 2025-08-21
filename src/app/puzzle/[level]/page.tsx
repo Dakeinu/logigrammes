@@ -14,6 +14,264 @@ interface Config {
   solution: Solution;
 }
 
+type LevelConfig = {
+  level: string;
+  title: string;
+  subtitle: string;
+  image: { src: string; alt: string };
+  participants: string[];
+  categories: [string, string, string];
+  values: Record<string, string[]>;
+  hints: string[];
+  solution: Solution;
+  recapClasses: Record<string, string>;
+};
+
+const LEVEL_CONFIGS: Record<string, LevelConfig> = {
+  "1": {
+    level: "1",
+    title: "Qui a gagné quoi à la fête foraine ?",
+    subtitle: "Niveau 1",
+    image: {
+      src: "https://www.bonpourlesoreilles.net/wp-content/uploads/2019/01/histoire-fete-foraine.jpg",
+      alt: "Ballons de fête foraine",
+    },
+    participants: ["Alice", "Benoît", "Clara", "David"],
+    categories: ["Ballon", "Boisson", "Lot"],
+    values: {
+      Ballon: ["Rouge", "Bleu", "Vert", "Jaune"],
+      Boisson: ["Soda", "Jus", "Limonade", "Thé glacé"],
+      Lot: ["Peluche", "Casquette", "Bonbon géant", "Porte-clés"],
+    },
+    hints: [
+      "La personne qui a gagné la <strong>Peluche</strong> a bu du <strong>Jus</strong>.",
+      "<strong>Benoît</strong> n’a pas eu de ballon <strong>Rouge</strong> ni <strong>Vert</strong>.",
+      "Le ballon <strong>Jaune</strong> est associé au <strong>Thé glacé</strong>.",
+      "<strong>Clara</strong> n’a pas gagné la <strong>Casquette</strong>.",
+      "La personne au ballon <strong>Bleu</strong> a bu du <strong>Soda</strong>.",
+      "<strong>Alice</strong> n’a pas gagné de <strong>Porte-clés</strong>.",
+      "La <strong>Limonade</strong> est allée avec le <strong>Porte-clés</strong>.",
+      "Le <strong>Bonbon géant</strong> n’est allé ni à <strong>Alice</strong> ni à <strong>Benoît</strong>.",
+    ],
+    solution: {
+      Alice: { Ballon: "Rouge", Boisson: "Jus", Lot: "Peluche" },
+      "Benoît": { Ballon: "Bleu", Boisson: "Soda", Lot: "Casquette" },
+      Clara: { Ballon: "Vert", Boisson: "Limonade", Lot: "Porte-clés" },
+      David: { Ballon: "Jaune", Boisson: "Thé glacé", Lot: "Bonbon géant" },
+    },
+    recapClasses: { Ballon: "r-ball", Boisson: "r-bois", Lot: "r-lot" },
+  },
+  "2": {
+    level: "2",
+    title: "Club de lecture : qui lit quoi et avec quel accessoire ?",
+    subtitle: "Niveau 2",
+    image: {
+      src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&amp;auto=format&amp;fit=crop&amp;w=1200&amp;h=600",
+      alt: "Club de lecture avec livres et boissons chaudes",
+    },
+    participants: ["Emma", "Félix", "Jade", "Lucas"],
+    categories: ["Genre", "Boisson", "Accessoire"],
+    values: {
+      Genre: ["Policier", "Fantastique", "Historique", "Science-fiction"],
+      Boisson: ["Café", "Thé", "Chocolat chaud", "Cappuccino"],
+      Accessoire: ["Marque-page", "Lunettes", "Écharpe", "Carnet"],
+    },
+    hints: [
+      "La personne qui lit le <strong>Fantastique</strong> boit du <strong>Thé</strong>.",
+      "Le <strong>Café</strong> n’est pas bu par <strong>Lucas</strong> ni par le lecteur du <strong>Historique</strong>.",
+      "Les <strong>Lunettes</strong> sont associées au <strong>Policier</strong>.",
+      "<strong>Emma</strong> n’utilise pas d’<strong>Écharpe</strong>.",
+      "Le <strong>Cappuccino</strong> va avec la <strong>Science-fiction</strong>.",
+      "<strong>Jade</strong> n’a ni le <strong>Marque-page</strong> ni le genre <strong>Policier</strong>.",
+      "Le <strong>Chocolat chaud</strong> est allé avec le <strong>Carnet</strong>.",
+      "<strong>Félix</strong> n’a pas bu de <strong>Thé</strong> et il ne lit pas la <strong>Science-fiction</strong>.",
+    ],
+    solution: {
+      Emma: { Genre: "Fantastique", Boisson: "Thé", Accessoire: "Marque-page" },
+      "Félix": { Genre: "Policier", Boisson: "Café", Accessoire: "Lunettes" },
+      Jade: { Genre: "Historique", Boisson: "Chocolat chaud", Accessoire: "Carnet" },
+      Lucas: { Genre: "Science-fiction", Boisson: "Cappuccino", Accessoire: "Écharpe" },
+    },
+    recapClasses: { Genre: "r-genre", Boisson: "r-bois", Accessoire: "r-acc" },
+  },
+};
+
+function PuzzleView({ cfg }: { cfg: LevelConfig }) {
+  const [CAT_A, CAT_B, CAT_C] = cfg.categories;
+  const valsA = cfg.values[CAT_A];
+  const valsB = cfg.values[CAT_B];
+  const valsC = cfg.values[CAT_C];
+
+  return (
+    <main style={{ maxWidth: 980, margin: "0 auto" }}>
+      <h2>{cfg.title}</h2>
+      <h3>{cfg.subtitle}</h3>
+
+      <div className="controls" style={{ textAlign: "center", marginBottom: 16 }}>
+        <Link href="/" className="btn">← Sélection de niveau</Link>
+      </div>
+
+      <img
+        src={cfg.image.src}
+        alt={cfg.image.alt}
+        className="illus"
+        width={1200}
+        height={600}
+      />
+
+      {/* Indices */}
+      <section id="hints" className="hints card">
+        <div className="card-body">
+          <div className="hints-header">
+            <h4 className="hints-title">Indices</h4>
+            <button id="toggleHints" className="btn" type="button">Masquer les indices</button>
+          </div>
+          <ol className="hints-list" id="hintsList">
+            {cfg.hints.map((h, i) => (
+              <li key={i}><span dangerouslySetInnerHTML={{ __html: h }} /></li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ===== Grille (structure identique, libellés dynamiques) ===== */}
+      <div className="gridWrap">
+        <table className="grid" id="grid">
+          <tbody>
+            <tr>
+              <th className="sideLabel topBlank groupLeft"></th>
+              <th className="sideLabel topBlank rowLeft"></th>
+              <th className="colHead col-1" colSpan={4}>{CAT_A}</th>
+              <th className="colHead col-2" colSpan={4}>{CAT_B}</th>
+              <th className="colHead col-3" colSpan={4}>{CAT_C}</th>
+            </tr>
+            <tr>
+              <th className="sideLabel groupLeft"></th>
+              <th className="sideLabel rowLeft"></th>
+              {valsA.map((v) => (<th key={`${CAT_A}-${v}`} className="v col-1">{v}</th>))}
+              {valsB.map((v) => (<th key={`${CAT_B}-${v}`} className="v col-2">{v}</th>))}
+              {valsC.map((v) => (<th key={`${CAT_C}-${v}`} className="v col-3">{v}</th>))}
+            </tr>
+
+            {/* ===== Bloc 1 : PERSONNE ===== */}
+            {cfg.participants.map((p, idx) => (
+              <tr key={`p-${p}`} className="block-1">
+                {idx === 0 && <th rowSpan={cfg.participants.length} className="sideLabel groupLeft row-1">Personne</th>}
+                <th className="rowLeft">{p}</th>
+                {valsA.map((v) => (
+                  <td key={`${p}-${CAT_A}-${v}`} className="cell col-1" data-person={p} data-category={CAT_A} data-value={v}></td>
+                ))}
+                {valsB.map((v) => (
+                  <td key={`${p}-${CAT_B}-${v}`} className="cell col-2" data-person={p} data-category={CAT_B} data-value={v}></td>
+                ))}
+                {valsC.map((v) => (
+                  <td key={`${p}-${CAT_C}-${v}`} className="cell col-3" data-person={p} data-category={CAT_C} data-value={v}></td>
+                ))}
+              </tr>
+            ))}
+
+            {/* ===== Bloc 2 : {CAT_C} (paires avec A &amp; B) ===== */}
+            {valsC.map((left, idxRow) => (
+              <tr key={`c-${left}`} className="block-2">
+                {idxRow === 0 && <th rowSpan={valsC.length} className="sideLabel groupLeft row-2">{CAT_C}</th>}
+                <th className="rowLeft">{left}</th>
+                {valsA.map((top) => (
+                  <td key={`${CAT_C}|${CAT_A}-${left}-${top}`}
+                    className="cell col-1"
+                    data-pair={`${CAT_C}|${CAT_A}`}
+                    data-leftcat={CAT_C}
+                    data-left={left}
+                    data-topcat={CAT_A}
+                    data-top={top}></td>
+                ))}
+                {valsB.map((top) => (
+                  <td key={`${CAT_C}|${CAT_B}-${left}-${top}`}
+                    className="cell col-2"
+                    data-pair={`${CAT_C}|${CAT_B}`}
+                    data-leftcat={CAT_C}
+                    data-left={left}
+                    data-topcat={CAT_B}
+                    data-top={top}></td>
+                ))}
+                <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
+              </tr>
+            ))}
+
+            {/* ===== Bloc 3 : {CAT_B} (paires avec A) ===== */}
+            {valsB.map((left, idxRow) => (
+              <tr key={`b-${left}`} className="block-boisson">
+                {idxRow === 0 && <th rowSpan={valsB.length} className="sideLabel groupLeft row-3">{CAT_B}</th>}
+                <th className="rowLeft">{left}</th>
+                {valsA.map((top) => (
+                  <td key={`${CAT_B}|${CAT_A}-${left}-${top}`}
+                    className="cell col-1"
+                    data-pair={`${CAT_B}|${CAT_A}`}
+                    data-leftcat={CAT_B}
+                    data-left={left}
+                    data-topcat={CAT_A}
+                    data-top={top}></td>
+                ))}
+                <td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td>
+                <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="controls" style={{ flexWrap: "wrap" }}>
+        <button id="undo" className="btn" type="button" disabled>Annuler (Ctrl+Z)</button>
+        <button id="reset" className="btn" type="button">Effacer la grille</button>
+        <button id="toggleCorrection" className="btn" type="button">Afficher la correction</button>
+      </div>
+
+      <table className="answers" id="recap">
+        <thead>
+          <tr>
+            <th>Participant</th>
+            {cfg.categories.map((c) => (<th key={`recap-head-${c}`}>{c}</th>))}
+          </tr>
+        </thead>
+        <tbody>
+          {cfg.participants.map((p) => (
+            <tr key={`recap-${p}`} data-person={p}>
+              <th>{p}</th>
+              {cfg.categories.map((c) => (
+                <td key={`recap-${p}-${c}`} className={cfg.recapClasses[c]}></td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <table className="answers hidden" id="solution">
+        <thead>
+          <tr>
+            <th>Correction</th>
+            {cfg.categories.map((c) => (<th key={`sol-head-${c}`}>{c}</th>))}
+          </tr>
+        </thead>
+        <tbody>
+          {cfg.participants.map((p) => (
+            <tr key={`sol-${p}`} data-person={p}>
+              <th>{p}</th>
+              {cfg.categories.map((c) => (<td key={`sol-${p}-${c}`} className={`s-${c.toLowerCase()}`}>—</td>))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <script
+        id="puzzle-solution"
+        type="application/json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(cfg.solution),
+        }}
+      />
+    </main>
+  );
+}
+
 /** Helpers d'attributs data-* pour éviter dataset:any */
 const getData = (el: Element, key: string): string | null =>
   el.getAttribute(`data-${key}`);
@@ -31,6 +289,36 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
     const recapTable = document.getElementById("recap") as HTMLTableElement | null;
     const solutionTable = document.getElementById("solution") as HTMLTableElement | null;
     if (!grid || !recapTable || !solutionTable) return;
+
+    // --- Historique pour annuler (Ctrl+Z / bouton) ---
+    type CellState = "" | "no" | "ok";
+    let history: Array<{ el: HTMLElement; prev: CellState; next: CellState }> = [];
+
+    function updateUndoButton() {
+      const btn = document.getElementById("undo") as HTMLButtonElement | null;
+      if (!btn) return;
+      if (history.length === 0) btn.setAttribute("disabled", "true");
+      else btn.removeAttribute("disabled");
+    }
+
+    function performUndo() {
+      const last = history.pop();
+      if (!last) return;
+      // Restaurer l'état précédent
+      setState(last.el, last.prev);
+      recomputeForbidden();
+      updateRecap();
+      saveProgress();
+      updateUndoButton();
+    }
+
+    // Raccourci clavier Ctrl+Z / Cmd+Z
+    document.addEventListener("keydown", (e) => {
+      const isUndo = (e.key === "z" || e.key === "Z") && (e.ctrlKey || e.metaKey) && !e.shiftKey && !e.altKey;
+      if (!isUndo) return;
+      e.preventDefault();
+      performUndo();
+    });
 
     const CELL_STATES: Array<"" | "no" | "ok"> = ["", "no", "ok"];
 
@@ -108,6 +396,35 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
 
     // --- Persistence (localStorage) ---
     const STORAGE_KEY = `puzzle-progress-${level}`;
+    const HINTS_STORAGE_KEY = `puzzle-hints-${level}`;
+
+    function saveHintsState() {
+      try {
+        const list = document.querySelectorAll("#hintsList li");
+        const checked: number[] = [];
+        list.forEach((li, idx) => {
+          const el = li as HTMLElement;
+          if (el.style.textDecoration === "line-through") {
+            checked.push(idx);
+          }
+        });
+        localStorage.setItem(HINTS_STORAGE_KEY, JSON.stringify(checked));
+      } catch {}
+    }
+
+    function applySavedHints() {
+      try {
+        const raw = localStorage.getItem(HINTS_STORAGE_KEY);
+        if (!raw) return;
+        const checked = JSON.parse(raw) as number[];
+        const set = new Set(checked);
+        document.querySelectorAll("#hintsList li").forEach((li, idx) => {
+          const el = li as HTMLElement;
+          el.style.cursor = "pointer";
+          el.style.textDecoration = set.has(idx) ? "line-through" : "";
+        });
+      } catch {}
+    }
 
     function makeCellKey(td: Element): string {
       return [
@@ -305,9 +622,18 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
         return; // ne pas autoriser la modification d'une cellule auto-forbid
       }
 
-      const cur = (getData(td, "state") as "" | "no" | "ok" | null) || "";
-      const next = CELL_STATES[(CELL_STATES.indexOf(cur) + 1) % CELL_STATES.length];
+      const cur = (getData(td, "state") as CellState | null) || "";
+      const next = CELL_STATES[(CELL_STATES.indexOf(cur) + 1) % CELL_STATES.length] as CellState;
+
+      // Appliquer la modification
       setState(td, next);
+
+      // Enregistrer uniquement les actions manuelles de l'utilisateur
+      if (cur !== next) {
+        history.push({ el: td, prev: cur, next });
+        updateUndoButton();
+      }
+
       recomputeForbidden();
       updateRecap();
       saveProgress();
@@ -318,6 +644,12 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
       updateRecap();
       recomputeForbidden();
       try { localStorage.removeItem(STORAGE_KEY); } catch {}
+      history = [];
+      updateUndoButton();
+    });
+
+    document.getElementById("undo")?.addEventListener("click", () => {
+      performUndo();
     });
 
     document.getElementById("toggleCorrection")?.addEventListener("click", () => {
@@ -340,13 +672,26 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
         : "Masquer les indices";
     });
 
+    // Toggle strikethrough on hint click + pointer cursor (with persistence)
+    applySavedHints();
+    document.querySelectorAll("#hintsList li").forEach((li) => {
+      const el = li as HTMLElement;
+      el.style.cursor = "pointer";
+      li.addEventListener("click", () => {
+        el.style.textDecoration = el.style.textDecoration === "line-through" ? "" : "line-through";
+        saveHintsState();
+      });
+    });
+
     fillSolution(CONFIG.solution);
     loadProgress();
     updateRecap();
     recomputeForbidden();
   }, [level]);
 
-  if (level !== "1") {
+  const cfg = LEVEL_CONFIGS[level];
+
+  if (!cfg) {
     return (
       <main style={{ maxWidth: 980, margin: "0 auto" }}>
         <h2>Niveau {level}</h2>
@@ -355,282 +700,5 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
     );
   }
 
-  return (
-    <main style={{ maxWidth: 980, margin: "0 auto" }}>
-      <h2>Qui a gagné quoi à la fête foraine ?</h2>
-      <h3>Niveau 1</h3>
-
-      <div className="controls" style={{ textAlign: "center", marginBottom: 16 }}>
-        <Link href="/" className="btn">← Retour aux niveaux</Link>
-      </div>
-
-      {/* Remplace <img> par next/image pour éviter next/no-img-element */}
-      {/* <Image
-        src="./fete.jpg"
-        alt="Ballons de fête foraine"
-        className="illus"
-        width={1200}
-        height={600}
-        priority
-      /> */}
-      <img
-        src="https://www.bonpourlesoreilles.net/wp-content/uploads/2019/01/histoire-fete-foraine.jpg"
-        alt="Ballons de fête foraine"
-        className="illus"
-        width={1200}
-        height={600}
-      />
-
-      {/* Indices */}
-      <section id="hints" className="hints card">
-        <div className="card-body">
-          <div className="hints-header">
-            <h4 className="hints-title">Indices</h4>
-            <button id="toggleHints" className="btn" type="button">Masquer les indices</button>
-          </div>
-          <ol className="hints-list" id="hintsList">
-            <li>La personne qui a gagné la <strong>Peluche</strong> a bu du <strong>Jus</strong>.</li>
-            <li><strong>Benoît</strong> n’a pas eu de ballon <strong>Rouge</strong> ni <strong>Vert</strong>.</li>
-            <li>Le ballon <strong>Jaune</strong> est associé au <strong>Thé glacé</strong>.</li>
-            <li><strong>Clara</strong> n’a pas gagné la <strong>Casquette</strong>.</li>
-            <li>La personne au ballon <strong>Bleu</strong> a bu du <strong>Soda</strong>.</li>
-            <li><strong>Alice</strong> n’a pas gagné de <strong>Porte-clés</strong>.</li>
-            <li>La <strong>Limonade</strong> est allée avec le <strong>Porte-clés</strong>.</li>
-            <li>Le <strong>Bonbon géant</strong> n’est allé ni à <strong>Alice</strong> ni à <strong>Benoît</strong>.</li>
-          </ol>
-        </div>
-      </section>
-
-      {/* ===== Grille (identique, class -> className) ===== */}
-      <div className="gridWrap">
-        <table className="grid" id="grid">
-          <tbody>
-            <tr>
-              <th className="sideLabel topBlank groupLeft"></th>
-              <th className="sideLabel topBlank rowLeft"></th>
-              <th className="colHead col-1" colSpan={4}>Ballon</th>
-              <th className="colHead col-2" colSpan={4}>Boisson</th>
-              <th className="colHead col-3" colSpan={4}>Lot</th>
-            </tr>
-            <tr>
-              <th className="sideLabel groupLeft"></th>
-              <th className="sideLabel rowLeft"></th>
-              <th className="v col-1">Rouge</th>
-              <th className="v col-1">Bleu</th>
-              <th className="v col-1">Vert</th>
-              <th className="v col-1">Jaune</th>
-              <th className="v col-2">Soda</th>
-              <th className="v col-2">Jus</th>
-              <th className="v col-2">Limonade</th>
-              <th className="v col-2">Thé glacé</th>
-              <th className="v col-3">Peluche</th>
-              <th className="v col-3">Casquette</th>
-              <th className="v col-3">Bonbon géant</th>
-              <th className="v col-3">Porte-clés</th>
-            </tr>
-
-            {/* ===== Bloc 1 : PERSONNE ===== */}
-            {/* Alice */}
-            <tr className="block-1">
-              <th rowSpan={4} className="sideLabel groupLeft row-1">Personne</th>
-              <th className="rowLeft">Alice</th>
-              <td className="cell col-1" data-person="Alice" data-category="Ballon" data-value="Rouge"></td>
-              <td className="cell col-1" data-person="Alice" data-category="Ballon" data-value="Bleu"></td>
-              <td className="cell col-1" data-person="Alice" data-category="Ballon" data-value="Vert"></td>
-              <td className="cell col-1" data-person="Alice" data-category="Ballon" data-value="Jaune"></td>
-              <td className="cell col-2" data-person="Alice" data-category="Boisson" data-value="Soda"></td>
-              <td className="cell col-2" data-person="Alice" data-category="Boisson" data-value="Jus"></td>
-              <td className="cell col-2" data-person="Alice" data-category="Boisson" data-value="Limonade"></td>
-              <td className="cell col-2" data-person="Alice" data-category="Boisson" data-value="Thé glacé"></td>
-              <td className="cell col-3" data-person="Alice" data-category="Lot" data-value="Peluche"></td>
-              <td className="cell col-3" data-person="Alice" data-category="Lot" data-value="Casquette"></td>
-              <td className="cell col-3" data-person="Alice" data-category="Lot" data-value="Bonbon géant"></td>
-              <td className="cell col-3" data-person="Alice" data-category="Lot" data-value="Porte-clés"></td>
-            </tr>
-            {/* Benoît */}
-            <tr className="block-1">
-              <th className="rowLeft">Benoît</th>
-              <td className="cell col-1" data-person="Benoît" data-category="Ballon" data-value="Rouge"></td>
-              <td className="cell col-1" data-person="Benoît" data-category="Ballon" data-value="Bleu"></td>
-              <td className="cell col-1" data-person="Benoît" data-category="Ballon" data-value="Vert"></td>
-              <td className="cell col-1" data-person="Benoît" data-category="Ballon" data-value="Jaune"></td>
-              <td className="cell col-2" data-person="Benoît" data-category="Boisson" data-value="Soda"></td>
-              <td className="cell col-2" data-person="Benoît" data-category="Boisson" data-value="Jus"></td>
-              <td className="cell col-2" data-person="Benoît" data-category="Boisson" data-value="Limonade"></td>
-              <td className="cell col-2" data-person="Benoît" data-category="Boisson" data-value="Thé glacé"></td>
-              <td className="cell col-3" data-person="Benoît" data-category="Lot" data-value="Peluche"></td>
-              <td className="cell col-3" data-person="Benoît" data-category="Lot" data-value="Casquette"></td>
-              <td className="cell col-3" data-person="Benoît" data-category="Lot" data-value="Bonbon géant"></td>
-              <td className="cell col-3" data-person="Benoît" data-category="Lot" data-value="Porte-clés"></td>
-            </tr>
-            {/* Clara */}
-            <tr className="block-1">
-              <th className="rowLeft">Clara</th>
-              <td className="cell col-1" data-person="Clara" data-category="Ballon" data-value="Rouge"></td>
-              <td className="cell col-1" data-person="Clara" data-category="Ballon" data-value="Bleu"></td>
-              <td className="cell col-1" data-person="Clara" data-category="Ballon" data-value="Vert"></td>
-              <td className="cell col-1" data-person="Clara" data-category="Ballon" data-value="Jaune"></td>
-              <td className="cell col-2" data-person="Clara" data-category="Boisson" data-value="Soda"></td>
-              <td className="cell col-2" data-person="Clara" data-category="Boisson" data-value="Jus"></td>
-              <td className="cell col-2" data-person="Clara" data-category="Boisson" data-value="Limonade"></td>
-              <td className="cell col-2" data-person="Clara" data-category="Boisson" data-value="Thé glacé"></td>
-              <td className="cell col-3" data-person="Clara" data-category="Lot" data-value="Peluche"></td>
-              <td className="cell col-3" data-person="Clara" data-category="Lot" data-value="Casquette"></td>
-              <td className="cell col-3" data-person="Clara" data-category="Lot" data-value="Bonbon géant"></td>
-              <td className="cell col-3" data-person="Clara" data-category="Lot" data-value="Porte-clés"></td>
-            </tr>
-            {/* David */}
-            <tr className="block-1">
-              <th className="rowLeft">David</th>
-              <td className="cell col-1" data-person="David" data-category="Ballon" data-value="Rouge"></td>
-              <td className="cell col-1" data-person="David" data-category="Ballon" data-value="Bleu"></td>
-              <td className="cell col-1" data-person="David" data-category="Ballon" data-value="Vert"></td>
-              <td className="cell col-1" data-person="David" data-category="Ballon" data-value="Jaune"></td>
-              <td className="cell col-2" data-person="David" data-category="Boisson" data-value="Soda"></td>
-              <td className="cell col-2" data-person="David" data-category="Boisson" data-value="Jus"></td>
-              <td className="cell col-2" data-person="David" data-category="Boisson" data-value="Limonade"></td>
-              <td className="cell col-2" data-person="David" data-category="Boisson" data-value="Thé glacé"></td>
-              <td className="cell col-3" data-person="David" data-category="Lot" data-value="Peluche"></td>
-              <td className="cell col-3" data-person="David" data-category="Lot" data-value="Casquette"></td>
-              <td className="cell col-3" data-person="David" data-category="Lot" data-value="Bonbon géant"></td>
-              <td className="cell col-3" data-person="David" data-category="Lot" data-value="Porte-clés"></td>
-            </tr>
-
-            {/* ===== Bloc 2 : LOT ===== */}
-            <tr className="block-2">
-              <th rowSpan={4} className="sideLabel groupLeft row-2">Lot</th>
-              <th className="rowLeft">Peluche</th>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Peluche" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Peluche" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Peluche" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Peluche" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Peluche" data-topcat="Boisson" data-top="Soda"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Peluche" data-topcat="Boisson" data-top="Jus"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Peluche" data-topcat="Boisson" data-top="Limonade"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Peluche" data-topcat="Boisson" data-top="Thé glacé"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-            <tr className="block-2">
-              <th className="rowLeft">Casquette</th>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Casquette" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Casquette" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Casquette" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Casquette" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Casquette" data-topcat="Boisson" data-top="Soda"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Casquette" data-topcat="Boisson" data-top="Jus"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Casquette" data-topcat="Boisson" data-top="Limonade"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Casquette" data-topcat="Boisson" data-top="Thé glacé"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-            <tr className="block-2">
-              <th className="rowLeft">Bonbon géant</th>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Boisson" data-top="Soda"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Boisson" data-top="Jus"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Boisson" data-top="Limonade"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Bonbon géant" data-topcat="Boisson" data-top="Thé glacé"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-            <tr className="block-2">
-              <th className="rowLeft">Porte-clés</th>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Lot|Ballon" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Boisson" data-top="Soda"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Boisson" data-top="Jus"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Boisson" data-top="Limonade"></td>
-              <td className="cell col-2" data-pair="Lot|Boisson" data-leftcat="Lot" data-left="Porte-clés" data-topcat="Boisson" data-top="Thé glacé"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-
-            {/* ===== Bloc 3 : BOISSON ===== */}
-            <tr className="block-boisson">
-              <th rowSpan={4} className="sideLabel groupLeft row-3">Boisson</th>
-              <th className="rowLeft">Soda</th>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Soda" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Soda" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Soda" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Soda" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-            <tr className="block-boisson">
-              <th className="rowLeft">Jus</th>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Jus" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Jus" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Jus" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Jus" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-            <tr className="block-boisson">
-              <th className="rowLeft">Limonade</th>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Limonade" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Limonade" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Limonade" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Limonade" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-            <tr className="block-boisson">
-              <th className="rowLeft">Thé glacé</th>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Thé glacé" data-topcat="Ballon" data-top="Rouge"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Thé glacé" data-topcat="Ballon" data-top="Bleu"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Thé glacé" data-topcat="Ballon" data-top="Vert"></td>
-              <td className="cell col-1" data-pair="Boisson|Ballon" data-leftcat="Boisson" data-left="Thé glacé" data-topcat="Ballon" data-top="Jaune"></td>
-              <td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td><td className="blank col-2"></td>
-              <td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td><td className="blank col-3"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div className="controls" style={{ flexWrap: "wrap" }}>
-        <button id="reset" className="btn" type="button">Effacer la grille</button>
-        <button id="toggleCorrection" className="btn" type="button">Afficher la correction</button>
-      </div>
-
-      <table className="answers" id="recap">
-        <thead>
-          <tr><th>Participant</th><th>Ballon</th><th>Boisson</th><th>Lot</th></tr>
-        </thead>
-        <tbody>
-          <tr data-person="Alice"><th>Alice</th><td className="r-ball"></td><td className="r-bois"></td><td className="r-lot"></td></tr>
-          <tr data-person="Benoît"><th>Benoît</th><td className="r-ball"></td><td className="r-bois"></td><td className="r-lot"></td></tr>
-          <tr data-person="Clara"><th>Clara</th><td className="r-ball"></td><td className="r-bois"></td><td className="r-lot"></td></tr>
-          <tr data-person="David"><th>David</th><td className="r-ball"></td><td className="r-bois"></td><td className="r-lot"></td></tr>
-        </tbody>
-      </table>
-
-      <table className="answers hidden" id="solution">
-        <thead>
-          <tr><th>Correction</th><th>Ballon</th><th>Boisson</th><th>Lot</th></tr>
-        </thead>
-        <tbody>
-          <tr data-person="Alice"><th>Alice</th><td className="s-ball">—</td><td className="s-bois">—</td><td className="s-lot">—</td></tr>
-          <tr data-person="Benoît"><th>Benoît</th><td className="s-ball">—</td><td className="s-bois">—</td><td className="s-lot">—</td></tr>
-          <tr data-person="Clara"><th>Clara</th><td className="s-ball">—</td><td className="s-bois">—</td><td className="s-lot">—</td></tr>
-          <tr data-person="David"><th>David</th><td className="s-ball">—</td><td className="s-bois">—</td><td className="s-lot">—</td></tr>
-        </tbody>
-      </table>
-
-      {/* La solution reste fournie en JSON dans un <script> */}
-      <script
-        id="puzzle-solution"
-        type="application/json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            Alice: { Ballon: "Rouge", Boisson: "Jus", Lot: "Peluche" },
-            "Benoît": { Ballon: "Bleu", Boisson: "Soda", Lot: "Casquette" },
-            Clara: { Ballon: "Vert", Boisson: "Limonade", Lot: "Porte-clés" },
-            David: { Ballon: "Jaune", Boisson: "Thé glacé", Lot: "Bonbon géant" },
-          }),
-        }}
-      />
-    </main>
-  );
+  return <PuzzleView cfg={cfg} />;
 }
