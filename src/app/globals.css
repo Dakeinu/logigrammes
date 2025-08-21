@@ -1,0 +1,537 @@
+@import "tailwindcss";
+
+/* === Ton design system global (copie de la balise <style> existante) === */
+
+:root {
+  --color-bg: #f9f9f9;
+  --color-text: #111;
+  --color-muted: #444;
+  --color-soft: #fafafa;
+  --color-border: #eaeaea;
+  --color-strong: #000;
+  --color-ok: #148514;
+  --color-no: #cc1e1e;
+  --color-forbid: #888;
+  --grid-row-alt: #E0E0E0;
+  --grid-col-tint: rgba(0, 0, 0, .12);
+  --font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --fs-root: 16px;
+  --fs-h2: 1.8em;
+  --fs-h3: 1.2em;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .04);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, .06);
+  --cell-size: 28px;
+  --cell-font: 12px;
+  --mark-size: 18px;
+  --w-group-left: 140px;
+  --w-row-left: 160px;
+  --illus-max-h: 300px;
+  --illus-width: 50%;
+  --gridWrap-maxW: 50vw;
+  --grid-cols: 12;
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-root);
+}
+
+body {
+  padding: var(--space-6);
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden
+}
+
+h2 {
+  text-align: center;
+  font-size: var(--fs-h2);
+  margin: .5em 0;
+  font-weight: var(--fw-bold);
+  color: var(--color-strong)
+}
+
+h3 {
+  text-align: center;
+  font-size: var(--fs-h3);
+  margin: .25em 0 1em;
+  font-weight: var(--fw-medium);
+  color: var(--color-muted)
+}
+
+.illus {
+  display: block;
+  width: var(--illus-width);
+  margin: 0 auto 1.5em;
+  max-height: var(--illus-max-h);
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+  border: 1px solid var(--color-border)
+}
+
+.gridWrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; /* allow horizontal scroll when needed */
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto var(--space-4);
+  display: flex;            /* center the table when there's room */
+  justify-content: center;
+}
+
+@media (min-width:1025px) {
+  :root {
+    /* adjust cell size so that left labels + 12 cells ≈ 50vw */
+    --cell-size: clamp(20px, calc((50vw - var(--w-group-left) - var(--w-row-left) - 16px) / var(--grid-cols)), 60px);
+  }
+  .gridWrap {
+    width: var(--gridWrap-maxW);   /* 50vw */
+    max-width: var(--gridWrap-maxW);
+    overflow-x: visible;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+table.grid {
+  border-collapse: collapse;
+  margin: 0 auto;
+  border: 1.5px solid var(--color-strong);
+  table-layout: auto;            /* au lieu de fixed */
+  width: auto;                   /* au lieu de 100% */
+  max-width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--color-strong);
+  position: relative
+}
+
+.sideLabel {
+  background: var(--grid-row-alt);
+  font-weight: var(--fw-bold);
+  text-align: center
+}
+
+.groupLeft {
+  width: var(--w-group-left)
+}
+
+.rowLeft {
+  width: var(--w-row-left);
+  background: #fff;
+  font-weight: var(--fw-semibold);
+  text-align: left;
+  padding: 6px 10px
+}
+
+.topBlank {
+  background: var(--grid-row-alt);
+  height: 46px
+}
+
+.v {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 6px 2px;
+  font-size: var(--cell-font)
+}
+
+.colHead {
+  background: #fff;
+  font-weight: var(--fw-bold);
+  text-align: center
+}
+
+.block-1 td,
+.block-1 th.rowLeft {
+  background: #fff
+}
+
+.block-2 td,
+.block-2 th.rowLeft {
+  background: var(--grid-row-alt)
+}
+
+.block-3 td,
+.block-boisson th.rowLeft {
+  background: #fff
+}
+
+.col-1::before,
+.col-2::before,
+.col-3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none
+}
+
+.col-1::before {
+  background: transparent
+}
+
+.col-2::before {
+  background: var(--grid-col-tint)
+}
+
+.col-3::before {
+  background: transparent
+}
+
+.row-1 {
+  background: transparent
+}
+
+.row-2 {
+  background: var(--grid-row-alt)
+}
+
+.row-3 {
+  background: transparent
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  min-width: var(--cell-size);
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  background: transparent
+}
+
+.cell .mark {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: var(--mark-size);
+  font-weight: 800;
+  user-select: none
+}
+
+.mark.ok {
+  color: var(--color-ok)
+}
+
+.mark.no {
+  color: var(--color-no)
+}
+
+.mark.forbid {
+  color: var(--color-forbid)
+}
+
+.cell.forbid {
+  cursor: not-allowed
+}
+
+.blank {
+  background: #fff;
+  border: none !important
+}
+
+.controls {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  margin: var(--space-5) 0
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm)
+}
+
+.btn:hover {
+  background: #f5f5f5
+}
+
+table.answers {
+  border-collapse: collapse;
+  margin: var(--space-5) auto;
+  border: 1px solid var(--color-border);
+  min-width: 520px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden
+}
+
+table.answers th,
+table.answers td {
+  border: 1px solid var(--color-border);
+  padding: 8px 12px;
+  font-size: 14px
+}
+
+table.answers thead th {
+  background: var(--color-soft);
+  font-weight: var(--fw-semibold);
+  color: #333
+}
+
+.hidden {
+  display: none
+}
+
+.hints {
+  max-width: 980px;
+  margin: 0 auto var(--space-5)
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md)
+}
+
+.card-body {
+  padding: var(--space-4) calc(var(--space-4) + 2px)
+}
+
+.hints-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2)
+}
+
+.hints-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: var(--fw-semibold);
+  color: var(--color-text)
+}
+
+.hints-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #333;
+  line-height: 1.5
+}
+
+.hints-list li {
+  margin: .25rem 0
+}
+
+/* Tablet */
+@media (max-width:1024px) {
+  :root {
+    --w-group-left: 110px; /* keep vars in sync with the rules below */
+    --w-row-left: 130px;
+    --cell-size: clamp(20px, calc((100vw - var(--w-group-left) - var(--w-row-left) - 16px) / var(--grid-cols)), 40px);
+  }
+  body {
+    padding: var(--space-5)
+  }
+
+  .illus {
+    width: 70%;
+    max-height: 260px
+  }
+
+  .hints {
+    margin: 0 var(--space-3) var(--space-5)
+  }
+
+  .gridWrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    /* au lieu de hidden */
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto var(--space-4);
+    display: flex;
+    /* centre la table quand il y a de la place */
+    justify-content: center;
+  }
+
+  table.answers {
+    width: 100%
+  }
+
+  .controls {
+    gap: 10px
+  }
+
+  h2 {
+    font-size: 1.6em
+  }
+
+  h3 {
+    font-size: 1.05em
+  }
+
+  .groupLeft {
+    width: 110px
+  }
+
+  .rowLeft {
+    width: 130px
+  }
+
+  .cell {
+    height: 30px
+  }
+
+  .v {
+    font-size: 11px
+  }
+}
+
+/* Mobile */
+@media (max-width:680px) {
+  :root {
+    --w-group-left: 84px;
+    --w-row-left: 110px;
+    --cell-size: clamp(18px, calc((100vw - var(--w-group-left) - var(--w-row-left) - 16px) / var(--grid-cols)), 36px);
+  }
+  html,
+  body {
+    font-size: 15px;
+    width: max-content;
+  }
+
+  body {
+    padding: 14px
+  }
+
+  h2 {
+    font-size: 1.35em;
+    margin: .4em 0 .6em
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: .2em 0 .8em
+  }
+
+  .illus {
+    width: 100%;
+    max-height: 200px;
+    border-radius: 10px
+  }
+
+  .card-body {
+    padding: 14px
+  }
+
+  .hints {
+    margin: 0 8px 14px
+  }
+
+  .hints-title {
+    font-size: 1.05rem
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px 14px
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin: 16px 0
+  }
+
+  .gridWrap {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+  }
+
+  table.answers {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch
+  }
+
+  table.answers thead th,
+  table.answers td {
+    white-space: nowrap
+  }
+
+  table.answers th,
+  table.answers td {
+    padding: 6px 8px;
+    font-size: 13px
+  }
+
+  .rowLeft {
+    padding: 6px 8px
+  }
+
+  .v {
+    font-size: 11px
+  }
+
+  .groupLeft {
+    width: 84px
+  }
+
+  .rowLeft {
+    width: 110px
+  }
+
+  .cell {
+    height: 28px
+  }
+
+  .v {
+    font-size: 10px
+  }
+}
+
+/* Very small phones */
+@media (max-width:360px) {
+
+  html,
+  body {
+    font-size: 14px;
+    width: max-content;
+  }
+
+  .illus {
+    max-height: 180px
+  }
+
+  .hints-title {
+    font-size: 1rem
+  }
+
+  .btn {
+    padding: 9px 12px
+  }
+}
