@@ -106,6 +106,51 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
     };
     CONFIG.recapClassByCategory = inferRecapClassByCategory(CONFIG.categories);
 
+    // --- Persistence (localStorage) ---
+    const STORAGE_KEY = `puzzle-progress-${level}`;
+
+    function makeCellKey(td: Element): string {
+      return [
+        getData(td, "person") || "",
+        getData(td, "category") || "",
+        getData(td, "value") || "",
+        getData(td, "pair") || "",
+        getData(td, "left") || "",
+        getData(td, "top") || "",
+      ].join("|");
+    }
+
+    function saveProgress() {
+      if (!grid) return;
+      const data: Record<string, string> = {};
+      grid.querySelectorAll(".cell").forEach((td) => {
+        const state = getData(td, "state") || "";
+        if (state) {
+          data[makeCellKey(td)] = state;
+        }
+      });
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      } catch {}
+    }
+
+    function loadProgress() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw) as Record<string, string>;
+        grid?.querySelectorAll(".cell").forEach((td) => {
+          const key = makeCellKey(td);
+          const st = data[key];
+          if (st === "ok" || st === "no") {
+            setState(td as HTMLElement, st);
+          } else if (!st) {
+            // leave empty
+          }
+        });
+      } catch {}
+    }
+
     function setState(td: HTMLElement, state: "" | "no" | "ok") {
       setData(td, "state", state);
       td.innerHTML = "";
@@ -254,23 +299,25 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
     grid.addEventListener("click", (e) => {
       const td = (e.target as HTMLElement).closest(".cell") as HTMLElement | null;
       if (!td) return;
+
+      // 🚫 Bloquer tout clic sur une cellule grisée automatiquement
       if (td.getAttribute('data-autoforbid') === '1') {
-        td.removeAttribute('data-autoforbid');
-        td.classList.remove('forbid');
-        // clear the dot if there was no manual state yet
-        if (!getData(td, 'state')) td.innerHTML = '';
+        return; // ne pas autoriser la modification d'une cellule auto-forbid
       }
+
       const cur = (getData(td, "state") as "" | "no" | "ok" | null) || "";
       const next = CELL_STATES[(CELL_STATES.indexOf(cur) + 1) % CELL_STATES.length];
       setState(td, next);
       recomputeForbidden();
       updateRecap();
+      saveProgress();
     });
 
     document.getElementById("reset")?.addEventListener("click", () => {
       grid.querySelectorAll(".cell").forEach((td) => setState(td as HTMLElement, ""));
       updateRecap();
       recomputeForbidden();
+      try { localStorage.removeItem(STORAGE_KEY); } catch {}
     });
 
     document.getElementById("toggleCorrection")?.addEventListener("click", () => {
@@ -294,6 +341,7 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
     });
 
     fillSolution(CONFIG.solution);
+    loadProgress();
     updateRecap();
     recomputeForbidden();
   }, [level]);
