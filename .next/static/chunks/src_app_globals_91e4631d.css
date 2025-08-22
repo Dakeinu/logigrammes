@@ -415,6 +415,10 @@
   }
 }
 
+*, :before, :after {
+  box-sizing: border-box;
+}
+
 :root {
   --color-bg: #f9f9f9;
   --color-text: #111;
@@ -512,8 +516,6 @@ h3 {
   }
 
   .gridWrap {
-    width: var(--gridWrap-maxW);
-    max-width: var(--gridWrap-maxW);
     margin-left: auto;
     margin-right: auto;
     overflow-x: visible;
@@ -805,7 +807,6 @@ table.answers thead th {
   }
 
   .gridWrap {
-    -webkit-overflow-scrolling: touch;
     width: 100%;
     max-width: 100%;
     margin: 0 auto var(--space-4);
@@ -907,7 +908,10 @@ table.answers thead th {
 
   .gridWrap {
     -webkit-overflow-scrolling: touch;
+    width: 100%;
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     overflow-x: auto;
   }
 
@@ -931,6 +935,16 @@ table.answers thead th {
 
   .rowLeft {
     padding: 6px 8px;
+  }
+
+  .v {
+    text-orientation: mixed;
+    word-break: break-all;
+    font-size: 11px;
+  }
+
+  .sideLabel {
+    word-break: break-all;
   }
 
   .groupLeft {

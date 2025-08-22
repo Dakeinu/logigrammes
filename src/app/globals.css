@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+*, *::before, *::after { box-sizing: border-box; }
+
 /* === Ton design system global (copie de la balise <style> existante) === */
 
 :root {
@@ -103,9 +105,6 @@ h3 {
   }
 
   .gridWrap {
-    width: var(--gridWrap-maxW);
-    /* 50vw */
-    max-width: var(--gridWrap-maxW);
     overflow-x: visible;
     margin-left: auto;
     margin-right: auto;
@@ -412,11 +411,8 @@ table.answers thead th {
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
-    /* au lieu de hidden */
-    -webkit-overflow-scrolling: touch;
     margin: 0 auto var(--space-4);
     display: flex;
-    /* centre la table quand il y a de la place */
     justify-content: center;
   }
 
@@ -514,9 +510,12 @@ table.answers thead th {
   }
 
   .gridWrap {
+    width: 100%;
     max-width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch
+    overflow-x: auto; /* allow horizontal scroll inside the wrapper */
+    -webkit-overflow-scrolling: touch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   table.answers {
@@ -546,6 +545,11 @@ table.answers thead th {
   .v {
     font-size: 11px;
     text-orientation: mixed;
+    word-break: break-all;
+  }
+
+  .sideLabel {
+    word-break: break-all;
   }
 
   .groupLeft {
