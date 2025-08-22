@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description: "Logigramme jouable hébergé sur Vercel",
   // si tu as choisi public/manifest.webmanifest :
   manifest: "/manifest.webmanifest",
-  themeColor: "#111111",
   icons: {
     icon: [
       { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },

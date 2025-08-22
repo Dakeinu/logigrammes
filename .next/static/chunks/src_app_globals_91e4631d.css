@@ -578,9 +578,11 @@ th, td {
   .v {
     width: var(--cell-size);
     height: var(--cell-size);
+    word-break: initial;
     justify-content: center;
     align-items: center;
-    display: flex;
+    min-width: 64px;
+    min-height: 64px;
     overflow: visible;
     writing-mode: initial !important;
     text-orientation: initial !important;

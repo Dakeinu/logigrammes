@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/remif/De%CC%81veloppement/Github/logigrammes/src/app/ServiceWorkerRegister.tsx"],"sourcesContent":["\"use client\";\nimport { useEffect } from \"react\";\n\nexport default function ServiceWorkerRegister() {\n  useEffect(() => {\n    if (\"serviceWorker\" in navigator) {\n      // délai pour laisser Next hydrater avant l’enregistrement\n      const id = setTimeout(() => {\n        navigator.serviceWorker\n          .register(\"/sw.js\")\n          .catch((err) => console.error(\"SW registration failed:\", err));\n      }, 0);\n      return () => clearTimeout(id);\n    }\n  }, []);\n  return null;\n}"],"names":[],"mappings":";;;;AACA;;AADA;;AAGe,SAAS;;IACtB,IAAA,0KAAS;2CAAC;YACR,IAAI,mBAAmB,WAAW;gBAChC,0DAA0D;gBAC1D,MAAM,KAAK;0DAAW;wBACpB,UAAU,aAAa,CACpB,QAAQ,CAAC,UACT,KAAK;kEAAC,CAAC,MAAQ,QAAQ,KAAK,CAAC,2BAA2B;;oBAC7D;yDAAG;gBACH;uDAAO,IAAM,aAAa;;YAC5B;QACF;0CAAG,EAAE;IACL,OAAO;AACT;GAbwB;KAAA","debugId":null}}]
+}
