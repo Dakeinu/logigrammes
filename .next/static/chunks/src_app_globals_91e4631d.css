@@ -522,7 +522,6 @@ h3 {
 
 table.grid {
   border-collapse: collapse;
-  border: 1.5px solid var(--color-strong);
   table-layout: auto;
   width: auto;
   max-width: 100%;
@@ -857,7 +856,8 @@ table.answers thead th {
   }
 
   html, body {
-    width: max-content;
+    min-width: 100%;
+    max-width: 100%;
     font-size: 15px;
   }
 
@@ -914,6 +914,7 @@ table.answers thead th {
   table.answers {
     -webkit-overflow-scrolling: touch;
     width: 100%;
+    min-width: 100%;
     max-width: 100%;
     display: block;
     overflow-x: auto;
@@ -952,7 +953,8 @@ table.answers thead th {
 
 @media (max-width: 360px) {
   html, body {
-    width: max-content;
+    min-width: 100%;
+    max-width: 100%;
     font-size: 14px;
   }
 
