@@ -3,7 +3,11 @@ import Link from "next/link";
 export default function Page() {
   const levels = [
     { id: 1, title: "Niveau 1", subtitle: "Fête Foraine" },
-    { id: 2, title: "Niveau 2", subtitle: "Club de Lecture" }
+    { id: 2, title: "Niveau 2", subtitle: "Club de Lecture" },
+    { id: 3, title: "Niveau 3", subtitle: "Voyage en Europe" },
+    { id: 4, title: "Niveau 4", subtitle: "Festival de Musique" },
+    { id: 5, title: "Niveau 5", subtitle: "Animaux de compagnie" },
+    { id: 6, title: "Niveau 6", subtitle: "Compétition sportive" }
   ];
 
   return (

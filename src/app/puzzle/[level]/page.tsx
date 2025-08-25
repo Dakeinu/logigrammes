@@ -94,6 +94,134 @@ const LEVEL_CONFIGS: Record<string, LevelConfig> = {
     },
     recapClasses: { Genre: "r-genre", Boisson: "r-bois", Accessoire: "r-acc" },
   },
+  "3": {
+    level: "3",
+    title: "Voyage en Europe : qui visite quoi, avec quel transport et quel plat ?",
+    subtitle: "Niveau 3",
+    image: {
+      src: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Voyage en Europe avec valise et repas typiques"
+    },
+    participants: ["Alice", "Bruno", "Clara", "David"],
+    categories: ["Ville", "Transport", "Plat"],
+    values: {
+      Ville: ["Paris", "Rome", "Berlin", "Madrid"],
+      Transport: ["Avion", "Train", "Bus", "Vélo"],
+      Plat: ["Croissant", "Pizza", "Currywurst", "Paella"]
+    },
+    hints: [
+      "La personne qui a mangé une <strong>Pizza</strong> a voyagé en <strong>Train</strong>.",
+      "<strong>David</strong> n’est pas allé à <strong>Paris</strong> et n’a pas pris l’<strong>Avion</strong>.",
+      "Le voyageur qui est allé à <strong>Berlin</strong> a pris le <strong>Bus</strong>.",
+      "<strong>Clara</strong> n’a pas mangé de <strong>Croissant</strong> ni visité <strong>Rome</strong>.",
+      "Celui qui a pris le <strong>Vélo</strong> est allé à <strong>Madrid</strong>.",
+      "L’<strong>Avion</strong> est associé au <strong>Croissant</strong>.",
+      "<strong>Bruno</strong> n’a pas mangé la <strong>Paella</strong> et il n’a pas pris le <strong>Bus</strong>."
+    ],
+    solution: {
+      Alice: { Ville: "Rome", Transport: "Train", Plat: "Pizza" },
+      Bruno: { Ville: "Paris", Transport: "Avion", Plat: "Croissant" },
+      Clara: { Ville: "Madrid", Transport: "Vélo", Plat: "Paella" },
+      David: { Ville: "Berlin", Transport: "Bus", Plat: "Currywurst" }
+    },
+    recapClasses: { Ville: "r-ville", Transport: "r-trans", Plat: "r-plat" }
+  },
+  "4": {
+    level: "4",
+    title: "Festival de musique : qui écoute quel groupe, avec quelle boisson et dans quelle zone ?",
+    subtitle: "Niveau 4",
+    image: {
+      src: "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Festival de musique avec foule et scène"
+    },
+    participants: ["Sophie", "Hugo", "Maya", "Nicolas"],
+    categories: ["Groupe", "Boisson", "Zone"],
+    values: {
+      Groupe: ["Rockeurs", "DJ Electro", "Jazz Band", "Chanteur Pop"],
+      Boisson: ["Soda", "Eau", "Bière", "Cocktail"],
+      Zone: ["VIP", "Pelouse", "Tribune", "Devant la scène"]
+    },
+    hints: [
+      "La personne qui boit une <strong>Bière</strong> est avec le <strong>Jazz Band</strong>.",
+      "<strong>Maya</strong> n’est pas en <strong>Zone VIP</strong> et n’a pas bu de <strong>Soda</strong>.",
+      "Le fan du <strong>Chanteur Pop</strong> est allé dans la <strong>Tribune</strong>.",
+      "<strong>Sophie</strong> n’a pas écouté le <strong>DJ Electro</strong> ni bu de <strong>Cocktail</strong>.",
+      "Celui qui est sur la <strong>Pelouse</strong> a pris une <strong>Eau</strong>.",
+      "Le <strong>Rockeurs</strong> est associé à la <strong>Zone VIP</strong>.",
+      "<strong>Hugo</strong> n’a pas bu de <strong>Bière</strong> et n’est pas dans la <strong>Tribune</strong>."
+    ],
+    solution: {
+      Sophie: { Groupe: "Rockeurs", Boisson: "Soda", Zone: "VIP" },
+      Hugo: { Groupe: "DJ Electro", Boisson: "Cocktail", Zone: "Devant la scène" },
+      Maya: { Groupe: "Jazz Band", Boisson: "Bière", Zone: "Pelouse" },
+      Nicolas: { Groupe: "Chanteur Pop", Boisson: "Eau", Zone: "Tribune" }
+    },
+    recapClasses: { Groupe: "r-groupe", Boisson: "r-bois", Zone: "r-zone" }
+  },
+  "5": {
+    level: "5",
+    title: "Animaux de compagnie : qui a quel animal, quel jouet et dort où ?",
+    subtitle: "Niveau 5",
+    image: {
+      src: "https://images.unsplash.com/photo-1558788353-f76d92427f16?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Animaux de compagnie et accessoires"
+    },
+    participants: ["Camille", "Louis", "Inès", "Thomas"],
+    categories: ["Animal", "Jouet", "Lieu"],
+    values: {
+      Animal: ["Chien", "Chat", "Lapin", "Perroquet"],
+      Jouet: ["Balle", "Pelote", "Carotte", "Cloche"],
+      Lieu: ["Panier", "Cage", "Arbre à chat", "Perchoir"]
+    },
+    hints: [
+      "L’animal qui dort dans la <strong>Cage</strong> joue avec une <strong>Carotte</strong>.",
+      "<strong>Camille</strong> n’a pas de <strong>Perroquet</strong> et n’utilise pas le <strong>Perchoir</strong>.",
+      "Celui qui a le <strong>Chat</strong> joue avec une <strong>Pelote</strong>.",
+      "Le <strong>Perroquet</strong> vit sur le <strong>Perchoir</strong>.",
+      "<strong>Inès</strong> n’a pas de <strong>Chien</strong> ni de <strong>Balle</strong>.",
+      "L’animal dans le <strong>Panier</strong> est le <strong>Chien</strong>.",
+      "<strong>Louis</strong> n’a pas de <strong>Lapin</strong> et son animal ne joue pas avec une <strong>Pelote</strong>."
+    ],
+    solution: {
+      Camille: { Animal: "Chien", Jouet: "Balle", Lieu: "Panier" },
+      Louis: { Animal: "Chat", Jouet: "Pelote", Lieu: "Arbre à chat" },
+      Inès: { Animal: "Lapin", Jouet: "Carotte", Lieu: "Cage" },
+      Thomas: { Animal: "Perroquet", Jouet: "Cloche", Lieu: "Perchoir" }
+    },
+    recapClasses: { Animal: "r-ani", Jouet: "r-jouet", Lieu: "r-lieu" }
+  },
+  "6": {
+    level: "6",
+    title: "Compétition sportive : qui pratique quel sport, porte quelle couleur et gagne quelle médaille ?",
+    subtitle: "Niveau 6",
+    image: {
+      src: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Compétition sportive avec athlètes"
+    },
+    participants: ["Élodie", "Marc", "Sarah", "Antoine"],
+    categories: ["Sport", "Couleur", "Médaille"],
+    values: {
+      Sport: ["Natation", "Athlétisme", "Cyclisme", "Tennis"],
+      Couleur: ["Rouge", "Bleu", "Vert", "Jaune"],
+      Médaille: ["Or", "Argent", "Bronze", "Aucune"]
+    },
+    hints: [
+      "Le sportif en <strong>Bleu</strong> a obtenu la <strong>Médaille d’Or</strong>.",
+      "<strong>Sarah</strong> n’a pas fait de <strong>Tennis</strong> ni porté de <strong>Vert</strong>.",
+      "Celui qui a fait du <strong>Cyclisme</strong> est en <strong>Jaune</strong>.",
+      "<strong>Antoine</strong> n’a pas gagné d’<strong>Or</strong> et il n’a pas fait de <strong>Natation</strong>.",
+      "Le joueur de <strong>Tennis</strong> n’a pas eu de médaille (<strong>Aucune</strong>).",
+      "L’athlète en <strong>Rouge</strong> a eu la <strong>Médaille d’Argent</strong>.",
+      "<strong>Marc</strong> n’a pas participé à l’<strong>Athlétisme</strong> et n’était pas en <strong>Rouge</strong>."
+    ],
+    solution: {
+      Élodie: { Sport: "Natation", Couleur: "Bleu", Médaille: "Or" },
+      Marc: { Sport: "Cyclisme", Couleur: "Jaune", Médaille: "Bronze" },
+      Sarah: { Sport: "Athlétisme", Couleur: "Rouge", Médaille: "Argent" },
+      Antoine: { Sport: "Tennis", Couleur: "Vert", Médaille: "Aucune" }
+    },
+    recapClasses: { Sport: "r-sport", Couleur: "r-coul", Médaille: "r-med" }
+  },
 };
 
 function PuzzleView({ cfg }: { cfg: LevelConfig }) {
@@ -337,14 +465,14 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
     function inferCategories(): string[] {
       const heads = recapTable
         ? Array.from(recapTable.querySelectorAll("thead th"))
-            .map((th) => (th as HTMLElement).textContent?.trim() || "")
-            .filter(Boolean)
+          .map((th) => (th as HTMLElement).textContent?.trim() || "")
+          .filter(Boolean)
         : [];
       if (heads.length > 1) return heads.slice(1);
       const colHeads = grid
         ? Array.from(grid.querySelectorAll(".colHead"))
-            .map((th) => (th as HTMLElement).textContent?.trim() || "")
-            .filter(Boolean)
+          .map((th) => (th as HTMLElement).textContent?.trim() || "")
+          .filter(Boolean)
         : [];
       if (colHeads.length) return colHeads;
       return [];
@@ -354,8 +482,8 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
       const firstRow = recapTable ? recapTable.querySelector("tbody tr") : null;
       const headCats = recapTable
         ? Array.from(recapTable.querySelectorAll("thead th"))
-            .map((th) => th.textContent?.trim() || "")
-            .slice(1)
+          .map((th) => th.textContent?.trim() || "")
+          .slice(1)
         : [];
       const cells = firstRow ? Array.from(firstRow.querySelectorAll("td")) : [];
       const map: Record<string, string> = {};
@@ -409,7 +537,7 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
           }
         });
         localStorage.setItem(HINTS_STORAGE_KEY, JSON.stringify(checked));
-      } catch {}
+      } catch { }
     }
 
     function applySavedHints() {
@@ -423,7 +551,7 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
           el.style.cursor = "pointer";
           el.style.textDecoration = set.has(idx) ? "line-through" : "";
         });
-      } catch {}
+      } catch { }
     }
 
     function makeCellKey(td: Element): string {
@@ -448,7 +576,7 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
       });
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-      } catch {}
+      } catch { }
     }
 
     function loadProgress() {
@@ -465,7 +593,7 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
             // leave empty
           }
         });
-      } catch {}
+      } catch { }
     }
 
     function setState(td: HTMLElement, state: "" | "no" | "ok") {
@@ -602,8 +730,8 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
         if (!row || !map[p]) return;
         const headers = solutionTable
           ? Array.from(solutionTable.querySelectorAll("thead th"))
-              .map((th) => th.textContent?.trim() || "")
-              .slice(1)
+            .map((th) => th.textContent?.trim() || "")
+            .slice(1)
           : [];
         const tds = Array.from(row.querySelectorAll("td"));
         headers.forEach((cat, i) => {
@@ -643,7 +771,7 @@ export default function PuzzlePage({ params }: { params: Promise<{ level: string
       grid.querySelectorAll(".cell").forEach((td) => setState(td as HTMLElement, ""));
       updateRecap();
       recomputeForbidden();
-      try { localStorage.removeItem(STORAGE_KEY); } catch {}
+      try { localStorage.removeItem(STORAGE_KEY); } catch { }
       history = [];
       updateUndoButton();
     });
