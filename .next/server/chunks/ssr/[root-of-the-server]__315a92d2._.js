@@ -72,14 +72,15 @@ const LEVEL_CONFIGS = {
             ]
         },
         "hints": [
-            "Au stand du tir, celui qui sirotait un <strong>Jus</strong> est reparti avec la <strong>Peluche</strong>.",
-            "Le ballon couleur du <strong>ciel</strong> accompagnait une boisson pétillante : le <strong>Soda</strong>.",
-            "Le seul ballon assorti à une boisson glacée était le <strong>Jaune</strong> avec le <strong>Thé glacé</strong>.",
-            "Le lot le plus léger, le <strong>Porte-clés</strong>, est parti avec la <strong>Limonade</strong>.",
-            "<strong>Clara</strong> n’a pas coiffé de <strong>Casquette</strong>.",
-            "Le <strong>Bonbon géant</strong> n’a été remporté ni par <strong>Alice</strong> ni par <strong>Benoît</strong>.",
-            "<strong>Alice</strong> n’est pas repartie avec le <strong>Porte-clés</strong>.",
-            "<strong>Benoît</strong> a évité les couleurs de Noël : pas de ballon <strong>Rouge</strong> ni <strong>Vert</strong>."
+            "Le ballon d’<strong>Alice</strong> rappelait une pomme d’amour.",
+            "Celui qui a bu du <strong>Jus</strong> est reparti avec la <strong>Peluche</strong>.",
+            "Le ballon <strong>Bleu</strong> accompagnait une boisson pétillante : le <strong>Soda</strong>.",
+            "Le ballon <strong>Jaune</strong> allait avec le <strong>Thé glacé</strong>.",
+            "Le <strong>Porte-clés</strong> a été gagné par celui qui avait la <strong>Limonade</strong>.",
+            "<strong>Benoît</strong> a eu le ballon <strong>Bleu</strong>.",
+            "<strong>Clara</strong> n’a pas eu la <strong>Casquette</strong>.",
+            "Le <strong>Bonbon géant</strong> n’a été gagné ni par <strong>Alice</strong> ni par <strong>Benoît</strong>.",
+            "<strong>Alice</strong> n’a pas gagné le <strong>Porte-clés</strong>."
         ],
         solution: {
             Alice: {
@@ -302,13 +303,13 @@ const LEVEL_CONFIGS = {
             ]
         },
         "hints": [
-            "La personne qui a bu une <strong>Bière</strong> n’était pas en <strong>Tribune</strong>.",
-            "<strong>Sophie</strong> se trouvait en <strong>VIP</strong>, mais n’a pas écouté le <strong>DJ Electro</strong>.",
-            "Le fan du <strong>Chanteur Pop</strong> avait une boisson légère et n’était pas en <strong>VIP</strong>.",
-            "Celui qui écoutait le <strong>Jazz Band</strong> n’a pas pris de <strong>Soda</strong>.",
-            "<strong>Maya</strong> n’était pas en zone <strong>VIP</strong> et n’a pas bu de <strong>Soda</strong>.",
-            "Le groupe des <strong>Rockeurs</strong> se jouait devant un public plus sélectif.",
-            "<strong>Hugo</strong> n’a pas assisté au concert depuis la <strong>Tribune</strong>."
+            "Les <strong>Rockeurs</strong> se produisaient en <strong>VIP</strong>.",
+            "Le <strong>Chanteur Pop</strong> était écouté depuis la <strong>Tribune</strong>.",
+            "Le <strong>Jazz Band</strong> était accompagné d’une <strong>Bière</strong>.",
+            "Le <strong>DJ Electro</strong> se voyait depuis <strong>Devant la scène</strong>.",
+            "<strong>Sophie</strong> était en <strong>VIP</strong> et n’a pas bu de <strong>Cocktail</strong>.",
+            "<strong>Nicolas</strong> buvait de l’<strong>Eau</strong>.",
+            "La <strong>Pelouse</strong> n’accueillait ni les <strong>Rockeurs</strong> ni le <strong>Chanteur Pop</strong>."
         ],
         solution: {
             Sophie: {
@@ -454,13 +455,13 @@ const LEVEL_CONFIGS = {
             ]
         },
         "hints": [
-            "L’athlète en <strong>Bleu</strong> a remporté la <strong>Médaille d’Or</strong>.",
-            "<strong>Élodie</strong> a brillé dans une discipline aquatique.",
-            "Celui qui portait du <strong>Jaune</strong> était en mouvement sur deux roues.",
-            "Le joueur de <strong>Tennis</strong> n’a obtenu aucune médaille.",
-            "L’athlète en <strong>Rouge</strong> a terminé deuxième.",
-            "<strong>Marc</strong> n’était pas en <strong>Rouge</strong> et ne courait pas sur piste.",
-            "<strong>Antoine</strong> n’a pas remporté la médaille d’or."
+            "Le sportif en <strong>Bleu</strong> a remporté la <strong>Médaille d’Or</strong>.",
+            "Le sportif en <strong>Rouge</strong> a remporté la <strong>Médaille d’Argent</strong>.",
+            "Celui en <strong>Jaune</strong> faisait du <strong>Cyclisme</strong>.",
+            "Le joueur de <strong>Tennis</strong> n’a obtenu <strong>aucune</strong> médaille.",
+            "<strong>Élodie</strong> a concouru en <strong>Natation</strong>.",
+            "<strong>Antoine</strong> portait du <strong>Vert</strong>.",
+            "<strong>Sarah</strong> n’a pas fait de <strong>Tennis</strong>."
         ],
         solution: {
             Élodie: {
@@ -506,14 +507,14 @@ function PuzzleView({ cfg }) {
                 children: cfg.title
             }, void 0, false, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 235,
+                lineNumber: 236,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                 children: cfg.subtitle
             }, void 0, false, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 236,
+                lineNumber: 237,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -528,12 +529,12 @@ function PuzzleView({ cfg }) {
                     children: "← Sélection de niveau"
                 }, void 0, false, {
                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                    lineNumber: 239,
+                    lineNumber: 240,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 238,
+                lineNumber: 239,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -544,7 +545,7 @@ function PuzzleView({ cfg }) {
                 height: 600
             }, void 0, false, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 242,
+                lineNumber: 243,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -561,7 +562,7 @@ function PuzzleView({ cfg }) {
                                     children: "Indices"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 254,
+                                    lineNumber: 255,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -571,13 +572,13 @@ function PuzzleView({ cfg }) {
                                     children: "Masquer les indices"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 255,
+                                    lineNumber: 256,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                            lineNumber: 253,
+                            lineNumber: 254,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -590,28 +591,28 @@ function PuzzleView({ cfg }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 259,
+                                        lineNumber: 260,
                                         columnNumber: 27
                                     }, this)
                                 }, i, false, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 259,
+                                    lineNumber: 260,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                            lineNumber: 257,
+                            lineNumber: 258,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                    lineNumber: 252,
+                    lineNumber: 253,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 251,
+                lineNumber: 252,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -627,14 +628,14 @@ function PuzzleView({ cfg }) {
                                         className: "sideLabel topBlank groupLeft"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 270,
+                                        lineNumber: 271,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "sideLabel topBlank rowLeft"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 271,
+                                        lineNumber: 272,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -643,7 +644,7 @@ function PuzzleView({ cfg }) {
                                         children: CAT_A
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 272,
+                                        lineNumber: 273,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -652,7 +653,7 @@ function PuzzleView({ cfg }) {
                                         children: CAT_B
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 274,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -661,13 +662,13 @@ function PuzzleView({ cfg }) {
                                         children: CAT_C
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 274,
+                                        lineNumber: 275,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                lineNumber: 269,
+                                lineNumber: 270,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -676,14 +677,14 @@ function PuzzleView({ cfg }) {
                                         className: "sideLabel groupLeft"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 277,
+                                        lineNumber: 278,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         className: "sideLabel rowLeft"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 278,
+                                        lineNumber: 279,
                                         columnNumber: 15
                                     }, this),
                                     valsA.map((v)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -691,7 +692,7 @@ function PuzzleView({ cfg }) {
                                             children: v
                                         }, `${CAT_A}-${v}`, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 279,
+                                            lineNumber: 280,
                                             columnNumber: 34
                                         }, this)),
                                     valsB.map((v)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -699,7 +700,7 @@ function PuzzleView({ cfg }) {
                                             children: v
                                         }, `${CAT_B}-${v}`, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 280,
+                                            lineNumber: 281,
                                             columnNumber: 34
                                         }, this)),
                                     valsC.map((v)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -707,13 +708,13 @@ function PuzzleView({ cfg }) {
                                             children: v
                                         }, `${CAT_C}-${v}`, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 281,
+                                            lineNumber: 282,
                                             columnNumber: 34
                                         }, this))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                lineNumber: 276,
+                                lineNumber: 277,
                                 columnNumber: 13
                             }, this),
                             cfg.participants.map((p, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -725,7 +726,7 @@ function PuzzleView({ cfg }) {
                                             children: "Personne"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 287,
+                                            lineNumber: 288,
                                             columnNumber: 31
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -733,7 +734,7 @@ function PuzzleView({ cfg }) {
                                             children: p
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 288,
+                                            lineNumber: 289,
                                             columnNumber: 17
                                         }, this),
                                         valsA.map((v)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -743,7 +744,7 @@ function PuzzleView({ cfg }) {
                                                 "data-value": v
                                             }, `${p}-${CAT_A}-${v}`, false, {
                                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                                lineNumber: 290,
+                                                lineNumber: 291,
                                                 columnNumber: 19
                                             }, this)),
                                         valsB.map((v)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -753,7 +754,7 @@ function PuzzleView({ cfg }) {
                                                 "data-value": v
                                             }, `${p}-${CAT_B}-${v}`, false, {
                                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                                lineNumber: 293,
+                                                lineNumber: 294,
                                                 columnNumber: 19
                                             }, this)),
                                         valsC.map((v)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -763,13 +764,13 @@ function PuzzleView({ cfg }) {
                                                 "data-value": v
                                             }, `${p}-${CAT_C}-${v}`, false, {
                                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                                lineNumber: 296,
+                                                lineNumber: 297,
                                                 columnNumber: 19
                                             }, this))
                                     ]
                                 }, `p-${p}`, true, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 286,
+                                    lineNumber: 287,
                                     columnNumber: 15
                                 }, this)),
                             valsC.map((left, idxRow)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -781,7 +782,7 @@ function PuzzleView({ cfg }) {
                                             children: CAT_C
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 304,
+                                            lineNumber: 305,
                                             columnNumber: 34
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -789,7 +790,7 @@ function PuzzleView({ cfg }) {
                                             children: left
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 305,
+                                            lineNumber: 306,
                                             columnNumber: 17
                                         }, this),
                                         valsA.map((top)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -801,7 +802,7 @@ function PuzzleView({ cfg }) {
                                                 "data-top": top
                                             }, `${CAT_C}|${CAT_A}-${left}-${top}`, false, {
                                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                                lineNumber: 307,
+                                                lineNumber: 308,
                                                 columnNumber: 19
                                             }, this)),
                                         valsB.map((top)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -813,41 +814,41 @@ function PuzzleView({ cfg }) {
                                                 "data-top": top
                                             }, `${CAT_C}|${CAT_B}-${left}-${top}`, false, {
                                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                                lineNumber: 316,
+                                                lineNumber: 317,
                                                 columnNumber: 19
                                             }, this)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 324,
+                                            lineNumber: 325,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 324,
+                                            lineNumber: 325,
                                             columnNumber: 50
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 324,
+                                            lineNumber: 325,
                                             columnNumber: 83
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 324,
+                                            lineNumber: 325,
                                             columnNumber: 116
                                         }, this)
                                     ]
                                 }, `c-${left}`, true, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 303,
+                                    lineNumber: 304,
                                     columnNumber: 15
                                 }, this)),
                             valsB.map((left, idxRow)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
@@ -859,7 +860,7 @@ function PuzzleView({ cfg }) {
                                             children: CAT_B
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 331,
+                                            lineNumber: 332,
                                             columnNumber: 34
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
@@ -867,7 +868,7 @@ function PuzzleView({ cfg }) {
                                             children: left
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 332,
+                                            lineNumber: 333,
                                             columnNumber: 17
                                         }, this),
                                         valsA.map((top)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -879,85 +880,85 @@ function PuzzleView({ cfg }) {
                                                 "data-top": top
                                             }, `${CAT_B}|${CAT_A}-${left}-${top}`, false, {
                                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                                lineNumber: 334,
+                                                lineNumber: 335,
                                                 columnNumber: 19
                                             }, this)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 342,
+                                            lineNumber: 343,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 342,
+                                            lineNumber: 343,
                                             columnNumber: 50
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 342,
+                                            lineNumber: 343,
                                             columnNumber: 83
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-2"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 342,
+                                            lineNumber: 343,
                                             columnNumber: 116
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 343,
+                                            lineNumber: 344,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 343,
+                                            lineNumber: 344,
                                             columnNumber: 50
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 343,
+                                            lineNumber: 344,
                                             columnNumber: 83
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: "blank col-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 343,
+                                            lineNumber: 344,
                                             columnNumber: 116
                                         }, this)
                                     ]
                                 }, `b-${left}`, true, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 330,
+                                    lineNumber: 331,
                                     columnNumber: 15
                                 }, this))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 268,
+                        lineNumber: 269,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                    lineNumber: 267,
+                    lineNumber: 268,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 266,
+                lineNumber: 267,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -974,7 +975,7 @@ function PuzzleView({ cfg }) {
                         children: "Annuler (Ctrl+Z)"
                     }, void 0, false, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 351,
+                        lineNumber: 352,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -984,7 +985,7 @@ function PuzzleView({ cfg }) {
                         children: "Effacer la grille"
                     }, void 0, false, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 352,
+                        lineNumber: 353,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -994,13 +995,13 @@ function PuzzleView({ cfg }) {
                         children: "Afficher la correction"
                     }, void 0, false, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 353,
+                        lineNumber: 354,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 350,
+                lineNumber: 351,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
@@ -1014,25 +1015,25 @@ function PuzzleView({ cfg }) {
                                     children: "Participant"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 359,
+                                    lineNumber: 360,
                                     columnNumber: 13
                                 }, this),
                                 cfg.categories.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         children: c
                                     }, `recap-head-${c}`, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 360,
+                                        lineNumber: 361,
                                         columnNumber: 41
                                     }, this))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                            lineNumber: 358,
+                            lineNumber: 359,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 357,
+                        lineNumber: 358,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1043,31 +1044,31 @@ function PuzzleView({ cfg }) {
                                         children: p
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 366,
+                                        lineNumber: 367,
                                         columnNumber: 15
                                     }, this),
                                     cfg.categories.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                             className: cfg.recapClasses[c]
                                         }, `recap-${p}-${c}`, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 368,
+                                            lineNumber: 369,
                                             columnNumber: 17
                                         }, this))
                                 ]
                             }, `recap-${p}`, true, {
                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                lineNumber: 365,
+                                lineNumber: 366,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 363,
+                        lineNumber: 364,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 356,
+                lineNumber: 357,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
@@ -1081,25 +1082,25 @@ function PuzzleView({ cfg }) {
                                     children: "Correction"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                    lineNumber: 378,
+                                    lineNumber: 379,
                                     columnNumber: 13
                                 }, this),
                                 cfg.categories.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                                         children: c
                                     }, `sol-head-${c}`, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 379,
+                                        lineNumber: 380,
                                         columnNumber: 41
                                     }, this))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                            lineNumber: 377,
+                            lineNumber: 378,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 376,
+                        lineNumber: 377,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -1110,7 +1111,7 @@ function PuzzleView({ cfg }) {
                                         children: p
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                        lineNumber: 385,
+                                        lineNumber: 386,
                                         columnNumber: 15
                                     }, this),
                                     cfg.categories.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
@@ -1118,24 +1119,24 @@ function PuzzleView({ cfg }) {
                                             children: "—"
                                         }, `sol-${p}-${c}`, false, {
                                             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                            lineNumber: 386,
+                                            lineNumber: 387,
                                             columnNumber: 43
                                         }, this))
                                 ]
                             }, `sol-${p}`, true, {
                                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                                lineNumber: 384,
+                                lineNumber: 385,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                        lineNumber: 382,
+                        lineNumber: 383,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 375,
+                lineNumber: 376,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("script", {
@@ -1146,13 +1147,13 @@ function PuzzleView({ cfg }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                lineNumber: 392,
+                lineNumber: 393,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-        lineNumber: 234,
+        lineNumber: 235,
         columnNumber: 5
     }, this);
 }
@@ -1535,20 +1536,20 @@ function PuzzlePage({ params }) {
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                    lineNumber: 825,
+                    lineNumber: 826,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: "Ce niveau n’est pas encore défini."
                 }, void 0, false, {
                     fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-                    lineNumber: 826,
+                    lineNumber: 827,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-            lineNumber: 824,
+            lineNumber: 825,
             columnNumber: 7
         }, this);
     }
@@ -1556,7 +1557,7 @@ function PuzzlePage({ params }) {
         cfg: cfg
     }, void 0, false, {
         fileName: "[project]/src/app/puzzle/[level]/page.tsx",
-        lineNumber: 831,
+        lineNumber: 832,
         columnNumber: 10
     }, this);
 }

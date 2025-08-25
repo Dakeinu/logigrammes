@@ -44,14 +44,15 @@ const LEVEL_CONFIGS: Record<string, LevelConfig> = {
       Lot: ["Peluche", "Casquette", "Bonbon géant", "Porte-clés"],
     },
     "hints": [
-      "Au stand du tir, celui qui sirotait un <strong>Jus</strong> est reparti avec la <strong>Peluche</strong>.",
-      "Le ballon couleur du <strong>ciel</strong> accompagnait une boisson pétillante : le <strong>Soda</strong>.",
-      "Le seul ballon assorti à une boisson glacée était le <strong>Jaune</strong> avec le <strong>Thé glacé</strong>.",
-      "Le lot le plus léger, le <strong>Porte-clés</strong>, est parti avec la <strong>Limonade</strong>.",
-      "<strong>Clara</strong> n’a pas coiffé de <strong>Casquette</strong>.",
-      "Le <strong>Bonbon géant</strong> n’a été remporté ni par <strong>Alice</strong> ni par <strong>Benoît</strong>.",
-      "<strong>Alice</strong> n’est pas repartie avec le <strong>Porte-clés</strong>.",
-      "<strong>Benoît</strong> a évité les couleurs de Noël : pas de ballon <strong>Rouge</strong> ni <strong>Vert</strong>."
+      "Le ballon d’<strong>Alice</strong> rappelait une pomme d’amour.",
+      "Celui qui a bu du <strong>Jus</strong> est reparti avec la <strong>Peluche</strong>.",
+      "Le ballon <strong>Bleu</strong> accompagnait une boisson pétillante : le <strong>Soda</strong>.",
+      "Le ballon <strong>Jaune</strong> allait avec le <strong>Thé glacé</strong>.",
+      "Le <strong>Porte-clés</strong> a été gagné par celui qui avait la <strong>Limonade</strong>.",
+      "<strong>Benoît</strong> a eu le ballon <strong>Bleu</strong>.",
+      "<strong>Clara</strong> n’a pas eu la <strong>Casquette</strong>.",
+      "Le <strong>Bonbon géant</strong> n’a été gagné ni par <strong>Alice</strong> ni par <strong>Benoît</strong>.",
+      "<strong>Alice</strong> n’a pas gagné le <strong>Porte-clés</strong>."
     ],
     solution: {
       Alice: { Ballon: "Rouge", Boisson: "Jus", Lot: "Peluche" },
@@ -142,13 +143,13 @@ const LEVEL_CONFIGS: Record<string, LevelConfig> = {
       Zone: ["VIP", "Pelouse", "Tribune", "Devant la scène"]
     },
     "hints": [
-      "La personne qui a bu une <strong>Bière</strong> n’était pas en <strong>Tribune</strong>.",
-      "<strong>Sophie</strong> se trouvait en <strong>VIP</strong>, mais n’a pas écouté le <strong>DJ Electro</strong>.",
-      "Le fan du <strong>Chanteur Pop</strong> avait une boisson légère et n’était pas en <strong>VIP</strong>.",
-      "Celui qui écoutait le <strong>Jazz Band</strong> n’a pas pris de <strong>Soda</strong>.",
-      "<strong>Maya</strong> n’était pas en zone <strong>VIP</strong> et n’a pas bu de <strong>Soda</strong>.",
-      "Le groupe des <strong>Rockeurs</strong> se jouait devant un public plus sélectif.",
-      "<strong>Hugo</strong> n’a pas assisté au concert depuis la <strong>Tribune</strong>."
+      "Les <strong>Rockeurs</strong> se produisaient en <strong>VIP</strong>.",
+      "Le <strong>Chanteur Pop</strong> était écouté depuis la <strong>Tribune</strong>.",
+      "Le <strong>Jazz Band</strong> était accompagné d’une <strong>Bière</strong>.",
+      "Le <strong>DJ Electro</strong> se voyait depuis <strong>Devant la scène</strong>.",
+      "<strong>Sophie</strong> était en <strong>VIP</strong> et n’a pas bu de <strong>Cocktail</strong>.",
+      "<strong>Nicolas</strong> buvait de l’<strong>Eau</strong>.",
+      "La <strong>Pelouse</strong> n’accueillait ni les <strong>Rockeurs</strong> ni le <strong>Chanteur Pop</strong>."
     ],
     solution: {
       Sophie: { Groupe: "Rockeurs", Boisson: "Soda", Zone: "VIP" },
@@ -206,13 +207,13 @@ const LEVEL_CONFIGS: Record<string, LevelConfig> = {
       Médaille: ["Or", "Argent", "Bronze", "Aucune"]
     },
     "hints": [
-      "L’athlète en <strong>Bleu</strong> a remporté la <strong>Médaille d’Or</strong>.",
-      "<strong>Élodie</strong> a brillé dans une discipline aquatique.",
-      "Celui qui portait du <strong>Jaune</strong> était en mouvement sur deux roues.",
-      "Le joueur de <strong>Tennis</strong> n’a obtenu aucune médaille.",
-      "L’athlète en <strong>Rouge</strong> a terminé deuxième.",
-      "<strong>Marc</strong> n’était pas en <strong>Rouge</strong> et ne courait pas sur piste.",
-      "<strong>Antoine</strong> n’a pas remporté la médaille d’or."
+      "Le sportif en <strong>Bleu</strong> a remporté la <strong>Médaille d’Or</strong>.",
+      "Le sportif en <strong>Rouge</strong> a remporté la <strong>Médaille d’Argent</strong>.",
+      "Celui en <strong>Jaune</strong> faisait du <strong>Cyclisme</strong>.",
+      "Le joueur de <strong>Tennis</strong> n’a obtenu <strong>aucune</strong> médaille.",
+      "<strong>Élodie</strong> a concouru en <strong>Natation</strong>.",
+      "<strong>Antoine</strong> portait du <strong>Vert</strong>.",
+      "<strong>Sarah</strong> n’a pas fait de <strong>Tennis</strong>."
     ],
     solution: {
       Élodie: { Sport: "Natation", Couleur: "Bleu", Médaille: "Or" },
