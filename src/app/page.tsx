@@ -7,7 +7,13 @@ export default function Page() {
     { id: 3, title: "Niveau 3", subtitle: "Voyage en Europe" },
     { id: 4, title: "Niveau 4", subtitle: "Festival de Musique" },
     { id: 5, title: "Niveau 5", subtitle: "Animaux de compagnie" },
-    { id: 6, title: "Niveau 6", subtitle: "Compétition sportive" }
+    { id: 6, title: "Niveau 6", subtitle: "Compétition sportive" },
+    { id: 7, title: "Niveau 7", subtitle: "Galeries d'un musée" },
+    { id: 8, title: "Niveau 8", subtitle: "Parc d’attractions" },
+    { id: 9, title: "Niveau 9", subtitle: "Outils de jardinage" },
+    { id: 10, title: "Niveau 10", subtitle: "Salle de cinéma" },
+    { id: 11, title: "Niveau 11", subtitle: "Vitrine de boulangerie" },
+    { id: 12, title: "Niveau 12", subtitle: "Hackathon" }
   ];
 
   return (

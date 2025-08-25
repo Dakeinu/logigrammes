@@ -222,7 +222,198 @@ const LEVEL_CONFIGS: Record<string, LevelConfig> = {
       Antoine: { Sport: "Tennis", Couleur: "Vert", Médaille: "Aucune" }
     },
     recapClasses: { Sport: "r-sport", Couleur: "r-coul", Médaille: "r-med" }
-  }
+  },
+  "7": {
+    level: "7",
+    title: "Musée : qui a visité quelle salle, pris quel audioguide et acheté quel souvenir ?",
+    subtitle: "Niveau 7",
+    image: {
+      src: "https://images.unsplash.com/photo-1520697222861-e772ce2d8b4a?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Galeries d'un musée"
+    },
+    participants: ["Anaïs", "Bastien", "Chloé", "Damien"],
+    categories: ["Salle", "Audioguide", "Souvenir"],
+    values: {
+      Salle: ["Peinture", "Sculpture", "Histoire naturelle", "Photographie"],
+      Audioguide: ["Français", "Anglais", "Espagnol", "Allemand"],
+      Souvenir: ["Carte postale", "Magnet", "Catalogue", "T-shirt"]
+    },
+    hints: [
+      "La salle de <strong>Photographie</strong> se visite avec l’audioguide en <strong>Anglais</strong>.",
+      "La salle d’<strong>Histoire naturelle</strong> est liée au <strong>Magnet</strong>.",
+      "La salle de <strong>Peinture</strong> est associée à la <strong>Carte postale</strong>.",
+      "La salle de <strong>Sculpture</strong> est liée au <strong>T-shirt</strong>.",
+      "<strong>Anaïs</strong> a pris l’audioguide en <strong>Français</strong>.",
+      "<strong>Bastien</strong> est reparti avec un <strong>T-shirt</strong>.",
+      "<strong>Chloé</strong> a acheté le <strong>Catalogue</strong>.",
+      "<strong>Damien</strong> n’a pas pris l’audioguide en <strong>Allemand</strong>."
+    ],
+    solution: {
+      "Anaïs": { Salle: "Peinture", Audioguide: "Français", Souvenir: "Carte postale" },
+      "Bastien": { Salle: "Sculpture", Audioguide: "Allemand", Souvenir: "T-shirt" },
+      "Chloé": { Salle: "Photographie", Audioguide: "Anglais", Souvenir: "Catalogue" },
+      "Damien": { Salle: "Histoire naturelle", Audioguide: "Espagnol", Souvenir: "Magnet" }
+    },
+    recapClasses: { Salle: "r-salle", Audioguide: "r-audio", Souvenir: "r-souv" }
+  },
+  "8": {
+    level: "8",
+    title: "Parc d’attractions : qui a fait quelle attraction, avec quel pass et quel snack ?",
+    subtitle: "Niveau 8",
+    image: {
+      src: "https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Parc d'attractions de nuit"
+    },
+    participants: ["Léa", "Noé", "Pauline", "Rayan"],
+    categories: ["Attraction", "Pass", "Snack"],
+    values: {
+      Attraction: ["Montagnes russes", "Grande roue", "Maison hantée", "Auto-tamponneuses"],
+      Pass: ["Express", "Classique", "VIP", "Soirée"],
+      Snack: ["Churros", "Crêpe", "Popcorn", "Glace"]
+    },
+    hints: [
+      "La <strong>Grande roue</strong> est associée à une <strong>Glace</strong>.",
+      "Le <strong>pass Soirée</strong> servait pour la <strong>Maison hantée</strong>.",
+      "Les <strong>Montagnes russes</strong> utilisaient le <strong>pass Express</strong> et allaient avec du <strong>Popcorn</strong>.",
+      "Les <strong>Auto-tamponneuses</strong> allaient avec des <strong>Churros</strong>.",
+      "<strong>Pauline</strong> avait le <strong>pass Soirée</strong>.",
+      "<strong>Noé</strong> a mangé une <strong>Glace</strong>.",
+      "<strong>Rayan</strong> a pris des <strong>Churros</strong>."
+    ],
+    solution: {
+      "Léa": { Attraction: "Montagnes russes", Pass: "Express", Snack: "Popcorn" },
+      "Noé": { Attraction: "Grande roue", Pass: "VIP", Snack: "Glace" },
+      "Pauline": { Attraction: "Maison hantée", Pass: "Soirée", Snack: "Crêpe" },
+      "Rayan": { Attraction: "Auto-tamponneuses", Pass: "Classique", Snack: "Churros" }
+    },
+    recapClasses: { Attraction: "r-attr", Pass: "r-pass", Snack: "r-snack" }
+  },
+  "9": {
+    level: "9",
+    title: "Jardinage : qui s’occupe de quelle plante, avec quel outil et à quel endroit ?",
+    subtitle: "Niveau 9",
+    image: {
+      src: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Outils de jardinage"
+    },
+    participants: ["Nina", "Omar", "Priya", "Quentin"],
+    categories: ["Plante", "Outil", "Endroit"],
+    values: {
+      Plante: ["Roses", "Tomates", "Lavande", "Basilic"],
+      Outil: ["Arrosoir", "Bêche", "Sécateur", "Gants"],
+      Endroit: ["Balcon", "Potager", "Massif", "Fenêtre"]
+    },
+    hints: [
+      "La <strong>Lavande</strong> est taillée au <strong>Sécateur</strong> et plantée au <strong>Massif</strong>.",
+      "Les <strong>Tomates</strong> se travaillent à la <strong>Bêche</strong> dans le <strong>Potager</strong>.",
+      "Le <strong>Basilic</strong> pousse à la <strong>Fenêtre</strong> et on l’arrose avec un <strong>Arrosoir</strong>.",
+      "Les <strong>Roses</strong> se plaisent au <strong>Balcon</strong> et on les manipule avec des <strong>Gants</strong>.",
+      "<strong>Priya</strong> s’occupe de l’herbe aromatique.",
+      "<strong>Omar</strong> n’est pas au <strong>Balcon</strong>."
+    ],
+    solution: {
+      "Nina": { Plante: "Lavande", Outil: "Sécateur", Endroit: "Massif" },
+      "Omar": { Plante: "Tomates", Outil: "Bêche", Endroit: "Potager" },
+      "Priya": { Plante: "Basilic", Outil: "Arrosoir", Endroit: "Fenêtre" },
+      "Quentin": { Plante: "Roses", Outil: "Gants", Endroit: "Balcon" }
+    },
+    recapClasses: { Plante: "r-plante", Outil: "r-outil", Endroit: "r-lieu" }
+  },
+  "10": {
+    level: "10",
+    title: "Cinéma : qui a vu quel genre, bu quelle boisson et s’est assis où ?",
+    subtitle: "Niveau 10",
+    image: {
+      src: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Salle de cinéma"
+    },
+    participants: ["Eva", "Gaspard", "Imane", "Julien"],
+    categories: ["Genre", "Boisson", "Place"],
+    values: {
+      Genre: ["Action", "Comédie", "Fantastique", "Documentaire"],
+      Boisson: ["Cola", "Eau", "Thé glacé", "Limonade"],
+      Place: ["Rang 1", "Rang 3", "Rang 5", "Rang 7"]
+    },
+    hints: [
+      "Le film d’<strong>Action</strong> allait avec un <strong>Cola</strong> au <strong>Rang 1</strong>.",
+      "Le <strong>Documentaire</strong> se regardait avec de l’<strong>Eau</strong> au <strong>Rang 7</strong>.",
+      "Le <strong>Fantastique</strong> allait avec un <strong>Thé glacé</strong> au <strong>Rang 5</strong>.",
+      "La <strong>Comédie</strong> allait avec une <strong>Limonade</strong> au <strong>Rang 3</strong>.",
+      "<strong>Julien</strong> avait envie d’<strong>Action</strong>.",
+      "<strong>Imane</strong> était assise au <strong>Rang 5</strong>.",
+      "<strong>Gaspard</strong> n’a pris ni <strong>Cola</strong> ni <strong>Limonade</strong>."
+    ],
+    solution: {
+      "Eva": { Genre: "Comédie", Boisson: "Limonade", Place: "Rang 3" },
+      "Gaspard": { Genre: "Documentaire", Boisson: "Eau", Place: "Rang 7" },
+      "Imane": { Genre: "Fantastique", Boisson: "Thé glacé", Place: "Rang 5" },
+      "Julien": { Genre: "Action", Boisson: "Cola", Place: "Rang 1" }
+    },
+    recapClasses: { Genre: "r-genre2", Boisson: "r-bois2", Place: "r-place" }
+  },
+  "11": {
+    level: "11",
+    title: "Boulangerie : qui a pris quelle viennoiserie, quelle boisson et à quel moment ?",
+    subtitle: "Niveau 11",
+    image: {
+      src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Vitrine de boulangerie"
+    },
+    participants: ["Karim", "Lola", "Maëlys", "Nathan"],
+    categories: ["Viennoiserie", "Boisson", "Moment"],
+    values: {
+      Viennoiserie: ["Croissant", "Pain au chocolat", "Pain aux raisins", "Brioche"],
+      Boisson: ["Café", "Thé", "Chocolat chaud", "Latte"],
+      Moment: ["Matin tôt", "Milieu de matinée", "Après-midi", "Soir"]
+    },
+    hints: [
+      "Le <strong>Matin tôt</strong> allait avec un <strong>Café</strong> et un <strong>Pain au chocolat</strong>.",
+      "Le <strong>Milieu de matinée</strong> allait avec du <strong>Thé</strong> et un <strong>Croissant</strong>.",
+      "L’<strong>Après-midi</strong> allait avec un <strong>Chocolat chaud</strong> et une <strong>Brioche</strong>.",
+      "Le <strong>Soir</strong> allait avec un <strong>Latte</strong> et un <strong>Pain aux raisins</strong>.",
+      "<strong>Lola</strong> a bu du <strong>Thé</strong>.",
+      "<strong>Nathan</strong> est passé le <strong>Soir</strong>."
+    ],
+    solution: {
+      "Karim": { Viennoiserie: "Pain au chocolat", Boisson: "Café", Moment: "Matin tôt" },
+      "Lola": { Viennoiserie: "Croissant", Boisson: "Thé", Moment: "Milieu de matinée" },
+      "Maëlys": { Viennoiserie: "Brioche", Boisson: "Chocolat chaud", Moment: "Après-midi" },
+      "Nathan": { Viennoiserie: "Pain aux raisins", Boisson: "Latte", Moment: "Soir" }
+    },
+    recapClasses: { Viennoiserie: "r-vien", Boisson: "r-bois3", Moment: "r-moment" }
+  },
+  "12": {
+    level: "12",
+    title: "Hackathon : qui a codé avec quel langage, sur quel système et avec quel outil ?",
+    subtitle: "Niveau 12",
+    image: {
+      src: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&auto=format&fit=crop&w=1200&h=600",
+      alt: "Écrans d’ordinateur pendant un hackathon"
+    },
+    participants: ["Océane", "Pierre", "Salomé", "Tariq"],
+    categories: ["Langage", "Système", "Outil"],
+    values: {
+      Langage: ["Python", "JavaScript", "Go", "Ruby"],
+      Système: ["Windows", "macOS", "Linux", "ChromeOS"],
+      Outil: ["VS Code", "Vim", "PyCharm", "WebStorm"]
+    },
+    hints: [
+      "Le <strong>Python</strong> se faisait sur <strong>macOS</strong> avec <strong>PyCharm</strong>.",
+      "Le <strong>JavaScript</strong> se faisait sur <strong>Windows</strong> avec <strong>WebStorm</strong>.",
+      "Le <strong>Go</strong> se faisait sur <strong>Linux</strong> avec <strong>Vim</strong>.",
+      "Le <strong>Ruby</strong> se faisait sur <strong>ChromeOS</strong> avec <strong>VS Code</strong>.",
+      "<strong>Océane</strong> travaillait sur <strong>macOS</strong>.",
+      "<strong>Pierre</strong> était sur <strong>Windows</strong>.",
+      "<strong>Salomé</strong> utilisait <strong>Vim</strong>."
+    ],
+    solution: {
+      "Océane": { Langage: "Python", Système: "macOS", Outil: "PyCharm" },
+      "Pierre": { Langage: "JavaScript", Système: "Windows", Outil: "WebStorm" },
+      "Salomé": { Langage: "Go", Système: "Linux", Outil: "Vim" },
+      "Tariq": { Langage: "Ruby", Système: "ChromeOS", Outil: "VS Code" }
+    },
+    recapClasses: { Langage: "r-lang", Système: "r-sys", Outil: "r-outil2" }
+  },
 };
 
 function PuzzleView({ cfg }: { cfg: LevelConfig }) {

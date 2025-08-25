@@ -52,6 +52,36 @@ function Page() {
             id: 6,
             title: "Niveau 6",
             subtitle: "Compétition sportive"
+        },
+        {
+            id: 7,
+            title: "Niveau 7",
+            subtitle: "Galeries d'un musée"
+        },
+        {
+            id: 8,
+            title: "Niveau 8",
+            subtitle: "Parc d’attractions"
+        },
+        {
+            id: 9,
+            title: "Niveau 9",
+            subtitle: "Outils de jardinage"
+        },
+        {
+            id: 10,
+            title: "Niveau 10",
+            subtitle: "Salle de cinéma"
+        },
+        {
+            id: 11,
+            title: "Niveau 11",
+            subtitle: "Vitrine de boulangerie"
+        },
+        {
+            id: 12,
+            title: "Niveau 12",
+            subtitle: "Hackathon"
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -68,7 +98,7 @@ function Page() {
                 children: "Choisis ton niveau"
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 15,
+                lineNumber: 21,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -95,7 +125,7 @@ function Page() {
                                 children: l.title
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 30,
+                                lineNumber: 36,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -107,24 +137,24 @@ function Page() {
                                 children: l.subtitle
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 31,
+                                lineNumber: 37,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, l.id, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 18,
+                        lineNumber: 24,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 16,
+                lineNumber: 22,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/page.tsx",
-        lineNumber: 14,
+        lineNumber: 20,
         columnNumber: 5
     }, this);
 }
