@@ -71,15 +71,15 @@ const LEVEL_CONFIGS = {
                 "Porte-clés"
             ]
         },
-        hints: [
-            "La personne qui a gagné la <strong>Peluche</strong> a bu du <strong>Jus</strong>.",
-            "<strong>Benoît</strong> n’a pas eu de ballon <strong>Rouge</strong> ni <strong>Vert</strong>.",
-            "Le ballon <strong>Jaune</strong> est associé au <strong>Thé glacé</strong>.",
-            "<strong>Clara</strong> n’a pas gagné la <strong>Casquette</strong>.",
-            "La personne au ballon <strong>Bleu</strong> a bu du <strong>Soda</strong>.",
-            "<strong>Alice</strong> n’a pas gagné de <strong>Porte-clés</strong>.",
-            "La <strong>Limonade</strong> est allée avec le <strong>Porte-clés</strong>.",
-            "Le <strong>Bonbon géant</strong> n’est allé ni à <strong>Alice</strong> ni à <strong>Benoît</strong>."
+        "hints": [
+            "Au stand du tir, celui qui sirotait un <strong>Jus</strong> est reparti avec la <strong>Peluche</strong>.",
+            "Le ballon couleur du <strong>ciel</strong> accompagnait une boisson pétillante : le <strong>Soda</strong>.",
+            "Le seul ballon assorti à une boisson glacée était le <strong>Jaune</strong> avec le <strong>Thé glacé</strong>.",
+            "Le lot le plus léger, le <strong>Porte-clés</strong>, est parti avec la <strong>Limonade</strong>.",
+            "<strong>Clara</strong> n’a pas coiffé de <strong>Casquette</strong>.",
+            "Le <strong>Bonbon géant</strong> n’a été remporté ni par <strong>Alice</strong> ni par <strong>Benoît</strong>.",
+            "<strong>Alice</strong> n’est pas repartie avec le <strong>Porte-clés</strong>.",
+            "<strong>Benoît</strong> a évité les couleurs de Noël : pas de ballon <strong>Rouge</strong> ni <strong>Vert</strong>."
         ],
         solution: {
             Alice: {
@@ -148,15 +148,15 @@ const LEVEL_CONFIGS = {
                 "Carnet"
             ]
         },
-        hints: [
-            "La personne qui lit le <strong>Fantastique</strong> boit du <strong>Thé</strong>.",
-            "Le <strong>Café</strong> n’est pas bu par <strong>Lucas</strong> ni par le lecteur du <strong>Historique</strong>.",
-            "Les <strong>Lunettes</strong> sont associées au <strong>Policier</strong>.",
+        "hints": [
+            "Le lecteur de mondes <strong>Fantastiques</strong> a choisi une boisson infusée : le <strong>Thé</strong>.",
+            "Celui qui menait l’enquête en <strong>Policier</strong> portait des <strong>Lunettes</strong>.",
+            "Le <strong>Cappuccino</strong> tenait compagnie au lecteur de <strong>Science-fiction</strong>.",
+            "L’amateur d’<strong>Historique</strong> s’est réchauffé avec un <strong>Chocolat chaud</strong> et prenait des notes dans un <strong>Carnet</strong>.",
             "<strong>Emma</strong> n’utilise pas d’<strong>Écharpe</strong>.",
-            "Le <strong>Cappuccino</strong> va avec la <strong>Science-fiction</strong>.",
-            "<strong>Jade</strong> n’a ni le <strong>Marque-page</strong> ni le genre <strong>Policier</strong>.",
-            "Le <strong>Chocolat chaud</strong> est allé avec le <strong>Carnet</strong>.",
-            "<strong>Félix</strong> n’a pas bu de <strong>Thé</strong> et il ne lit pas la <strong>Science-fiction</strong>."
+            "<strong>Félix</strong> ne boit pas de <strong>Thé</strong> ; il préfère le <strong>Café</strong> et ne lit pas la <strong>Science-fiction</strong>.",
+            "<strong>Lucas</strong> n’a pas choisi le <strong>Café</strong>.",
+            "<strong>Jade</strong> n’a ni le <strong>Marque-page</strong> ni le genre <strong>Policier</strong>."
         ],
         solution: {
             Emma: {
@@ -225,14 +225,14 @@ const LEVEL_CONFIGS = {
                 "Paella"
             ]
         },
-        hints: [
-            "La personne qui a mangé une <strong>Pizza</strong> a voyagé en <strong>Train</strong>.",
-            "<strong>David</strong> n’est pas allé à <strong>Paris</strong> et n’a pas pris l’<strong>Avion</strong>.",
-            "Le voyageur qui est allé à <strong>Berlin</strong> a pris le <strong>Bus</strong>.",
-            "<strong>Clara</strong> n’a pas mangé de <strong>Croissant</strong> ni visité <strong>Rome</strong>.",
-            "Celui qui a pris le <strong>Vélo</strong> est allé à <strong>Madrid</strong>.",
-            "L’<strong>Avion</strong> est associé au <strong>Croissant</strong>.",
-            "<strong>Bruno</strong> n’a pas mangé la <strong>Paella</strong> et il n’a pas pris le <strong>Bus</strong>."
+        "hints": [
+            "La personne qui a goûté une <strong>Pizza</strong> a voyagé en <strong>Train</strong>.",
+            "<strong>Bruno</strong> est allé dans une ville dont le plat typique est sucré, et il a pris l’<strong>Avion</strong>.",
+            "Celui qui a visité <strong>Berlin</strong> n’a pas pris de <strong>Vélo</strong>.",
+            "Le voyageur qui est allé à <strong>Madrid</strong> s’y est rendu à <strong>Vélo</strong>.",
+            "<strong>Clara</strong> n’a pas mangé de <strong>Croissant</strong>, mais son plat était espagnol.",
+            "Le <strong>Currywurst</strong> a été mangé dans la capitale allemande.",
+            "<strong>David</strong> n’est pas parti en <strong>Avion</strong>."
         ],
         solution: {
             Alice: {
@@ -301,14 +301,14 @@ const LEVEL_CONFIGS = {
                 "Devant la scène"
             ]
         },
-        hints: [
-            "La personne qui boit une <strong>Bière</strong> est avec le <strong>Jazz Band</strong>.",
-            "<strong>Maya</strong> n’est pas en <strong>Zone VIP</strong> et n’a pas bu de <strong>Soda</strong>.",
-            "Le fan du <strong>Chanteur Pop</strong> est allé dans la <strong>Tribune</strong>.",
-            "<strong>Sophie</strong> n’a pas écouté le <strong>DJ Electro</strong> ni bu de <strong>Cocktail</strong>.",
-            "Celui qui est sur la <strong>Pelouse</strong> a pris une <strong>Eau</strong>.",
-            "Le <strong>Rockeurs</strong> est associé à la <strong>Zone VIP</strong>.",
-            "<strong>Hugo</strong> n’a pas bu de <strong>Bière</strong> et n’est pas dans la <strong>Tribune</strong>."
+        "hints": [
+            "La personne qui a bu une <strong>Bière</strong> n’était pas en <strong>Tribune</strong>.",
+            "<strong>Sophie</strong> se trouvait en <strong>VIP</strong>, mais n’a pas écouté le <strong>DJ Electro</strong>.",
+            "Le fan du <strong>Chanteur Pop</strong> avait une boisson légère et n’était pas en <strong>VIP</strong>.",
+            "Celui qui écoutait le <strong>Jazz Band</strong> n’a pas pris de <strong>Soda</strong>.",
+            "<strong>Maya</strong> n’était pas en zone <strong>VIP</strong> et n’a pas bu de <strong>Soda</strong>.",
+            "Le groupe des <strong>Rockeurs</strong> se jouait devant un public plus sélectif.",
+            "<strong>Hugo</strong> n’a pas assisté au concert depuis la <strong>Tribune</strong>."
         ],
         solution: {
             Sophie: {
@@ -377,14 +377,14 @@ const LEVEL_CONFIGS = {
                 "Perchoir"
             ]
         },
-        hints: [
-            "L’animal qui dort dans la <strong>Cage</strong> joue avec une <strong>Carotte</strong>.",
-            "<strong>Camille</strong> n’a pas de <strong>Perroquet</strong> et n’utilise pas le <strong>Perchoir</strong>.",
-            "Celui qui a le <strong>Chat</strong> joue avec une <strong>Pelote</strong>.",
-            "Le <strong>Perroquet</strong> vit sur le <strong>Perchoir</strong>.",
-            "<strong>Inès</strong> n’a pas de <strong>Chien</strong> ni de <strong>Balle</strong>.",
-            "L’animal dans le <strong>Panier</strong> est le <strong>Chien</strong>.",
-            "<strong>Louis</strong> n’a pas de <strong>Lapin</strong> et son animal ne joue pas avec une <strong>Pelote</strong>."
+        "hints": [
+            "L’animal qui dort dans la <strong>Cage</strong> adore les légumes croquants.",
+            "<strong>Camille</strong> n’a pas choisi un animal à plumes, et son compagnon dort dans un <strong>Panier</strong>.",
+            "Le <strong>Chat</strong> préfère jouer avec une <strong>Pelote</strong>.",
+            "L’animal de <strong>Thomas</strong> adore faire du bruit avec une <strong>Cloche</strong>.",
+            "Celui qui possède le <strong>Perroquet</strong> ne vit pas au sol.",
+            "<strong>Inès</strong> n’a ni chien ni jouet en forme de balle.",
+            "Le <strong>Chien</strong> est installé confortablement dans le <strong>Panier</strong>."
         ],
         solution: {
             Camille: {
@@ -453,14 +453,14 @@ const LEVEL_CONFIGS = {
                 "Aucune"
             ]
         },
-        hints: [
-            "Le sportif en <strong>Bleu</strong> a obtenu la <strong>Médaille d’Or</strong>.",
-            "<strong>Sarah</strong> n’a pas fait de <strong>Tennis</strong> ni porté de <strong>Vert</strong>.",
-            "Celui qui a fait du <strong>Cyclisme</strong> est en <strong>Jaune</strong>.",
-            "<strong>Antoine</strong> n’a pas gagné d’<strong>Or</strong> et il n’a pas fait de <strong>Natation</strong>.",
-            "Le joueur de <strong>Tennis</strong> n’a pas eu de médaille (<strong>Aucune</strong>).",
-            "L’athlète en <strong>Rouge</strong> a eu la <strong>Médaille d’Argent</strong>.",
-            "<strong>Marc</strong> n’a pas participé à l’<strong>Athlétisme</strong> et n’était pas en <strong>Rouge</strong>."
+        "hints": [
+            "L’athlète en <strong>Bleu</strong> a remporté la <strong>Médaille d’Or</strong>.",
+            "<strong>Élodie</strong> a brillé dans une discipline aquatique.",
+            "Celui qui portait du <strong>Jaune</strong> était en mouvement sur deux roues.",
+            "Le joueur de <strong>Tennis</strong> n’a obtenu aucune médaille.",
+            "L’athlète en <strong>Rouge</strong> a terminé deuxième.",
+            "<strong>Marc</strong> n’était pas en <strong>Rouge</strong> et ne courait pas sur piste.",
+            "<strong>Antoine</strong> n’a pas remporté la médaille d’or."
         ],
         solution: {
             Élodie: {
